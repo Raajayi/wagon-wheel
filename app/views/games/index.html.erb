@@ -1,0 +1,11 @@
+<h2>Upcoming Games</h2>
+<div id="games">
+  <% @games.each do |game| %>
+
+    <h4><%= game.topic %></h4>
+    <p><%= game.title %></p>
+
+    <%= link_to "Play game", game %>
+
+  <% end %>
+</div>
