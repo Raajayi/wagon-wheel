@@ -5,7 +5,7 @@
 <%= simple_form_for(@response) do |f| %>
 
   <div class="form-inputs">
-    <%= f.collection_radio_buttons :answer, @question.answers, :id, :content %>
+    <%= f.collection_radio_buttons :answer_id, @question.answers, :id, :content %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, value: "Submit" %>
