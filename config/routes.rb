@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   unauthenticated(:user) do
     root to: "pages#landing", as: :landing
   end
-  
+
   authenticated(:user) do
-    root to: "pages#home"
+    root to: "games#index"
   end
-  
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+
+
+
+  resources :pages, only: [:index]
+
   resources :questions, only: [:show]
   resources :answers, only: [:show]
   resources :responses, only: [:create]
