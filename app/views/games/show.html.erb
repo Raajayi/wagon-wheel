@@ -1,5 +1,4 @@
-<h4>Question # of #</h4>
-<p><strong><%= @game.topic %>:</strong> <%= @game.title %></p>
+<h4>Current Game</h4>
+<p><strong><%= @game.topic %>:</strong> TODO Insert game title</p>
 
-<p>TODO: Insert question</p>
-<p>TODO: Display answers</p>
+<%= link_to "Play game!", question_url(@game.questions.find_by(order: 1)) %>
