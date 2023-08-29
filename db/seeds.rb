@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Destroting db records"
+puts "Destroying db records"
 
 Answer.destroy_all
 Question.destroy_all
@@ -42,9 +42,9 @@ puts "Seeding OOP quiz"
 
 oop = Game.create!(topic: "OOP")
 
-oop_1 = Question.create!(content: "In a Controller, what are the instance methods reffered as?", game_id: 2, order: 1)
-oop_2 = Question.create!(content: "Why do we use private within a class?", game_id: 2, order: 2)
-oop_3 = Question.create!(content: "What does the super keyword do?", game_id: 2, order: 3)
+oop_1 = Question.create!(content: "In a Controller, what are the instance methods reffered as?", game: oop, order: 1)
+oop_2 = Question.create!(content: "Why do we use private within a class?", game: oop, order: 2)
+oop_3 = Question.create!(content: "What does the super keyword do?", game: oop, order: 3)
 
 Answer.create!(content: "actions", correct: true, question: oop_1)
 Answer.create!(content: "instances", correct: false, question: oop_1)
@@ -66,9 +66,9 @@ puts "Seeding html quiz"
 
 html = Game.create!(topic: "HTML & CSS")
 
-html_1 = Question.create!(content: "What is a CSS id and why is it useful?", game_id: 3, order: 1)
-html_2 = Question.create!(content: "How do you emphasize a word in a paragraph?", game_id: 3, order: 2)
-html_3 = Question.create!(content: "What are the three languages your browser speaks?", game_id: 3, order: 3)
+html_1 = Question.create!(content: "What is a CSS id and why is it useful?", game: html, order: 1)
+html_2 = Question.create!(content: "How do you emphasize a word in a paragraph?", game: html, order: 2)
+html_3 = Question.create!(content: "What are the three languages your browser speaks?", game: html, order: 3)
 
 Answer.create!(content: "A CSS id is a way to group multiple elements together and apply styles collectively.", correct: false, question: html_1)
 Answer.create!(content: "A CSS id is a special class that can only be used for inline styling.", correct: false, question: html_1)
