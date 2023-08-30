@@ -47,7 +47,9 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .wrapper{padding: 0 30px}
 
 .summary{background: #1B1C1E; color: #f7f7f7; padding: 50px; margin: 150px 0 50px; border-radius: 16px; position: relative}
-.summary a{text-decoration: none; font:500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 25px; border-radius: 6px; display: inline-block; margin-right: 20px}
+
+
+.button{text-decoration: none; font:500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 25px; border-radius: 6px; display: inline-block; margin-right: 20px}
 
 
 .summary ul{list-style: none; padding: 0}
@@ -77,6 +79,25 @@ background-repeat: no-repeat}
 .games .game a{text-decoration: none; color: #1b1c1e; padding: 40px; display: block; background: #fff; border-radius: 12px; height: 350px; position: relative; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05)}
 .games .game span{font:500 14px/28px "Poppins", sans-serif; position: absolute; bottom: 40px; color: #29BF12}
 
+.questions{background: #fff}
+.questions .details{margin: 50px 0 0}
+.questions .question{font: 16px/32px "Poppins", sans-serif; margin: 40px 0}
+.questions .form-inputs{margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px}
+
+.questions .form-inputs span:nth-of-type(1) input[type="radio"] + label:before{content: "A"}
+.questions .form-inputs span:nth-of-type(2) input[type="radio"] + label:before{content: "B"}
+.questions .form-inputs span:nth-of-type(3) input[type="radio"] + label:before{content: "C"}
+.questions .form-inputs span:nth-of-type(4) input[type="radio"] + label:before{content: "D"}
+
+input[type="radio"]{appearance: none; display: none}
+input[type="radio"] + label {display: flex; align-items: center; background: #f7f7f7; padding: 25px; width: 100%; border-radius: 12px; cursor: pointer; min-height: 120px}
+input[type="radio"]:checked + label{font-weight: bold; color: #f7f7f7; background: #1B1C1E}
+
+input[type="radio"] + label:before{height: 60px; width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 58px; border-radius: 60px; font-weight: bold; font-size: 22px}
+input[type="radio"]:checked + label:before{border-color: #fff}
+
+
+
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}
 .live .pulse .default{width: 10px; height: 10px; position: relative; background: #29BF12; border: 1px solid #f7f7f7; border-radius: 50%; z-index: 1; display: block}
@@ -95,6 +116,9 @@ background-repeat: no-repeat}
 @media(max-width: 999px){
   .games{grid-template-columns: 1fr 1fr}
   .games .game a{padding: 30px}
+
+  .questions .form-inputs{grid-template-columns: 1fr}
+
 }
 
 @media(max-width: 799px){
@@ -123,5 +147,10 @@ background-repeat: no-repeat}
   .menu ul li a.results{background-image: url("icon-menu-results-dark.svg"); background-repeat: no-repeat}
   .menu ul li a.statistics{background-image: url("icon-menu-statistics-dark.svg"); background-repeat: no-repeat}
   .menu ul li a.profile{background-image: url("icon-menu-profile-dark.svg"); background-repeat: no-repeat}
+
+  .questions .menu{display: none}
+
+  .questions .question{margin: 20px 0}
+  input[type="radio"] + label{padding: 10px; min-height: 100px}
 
 }
