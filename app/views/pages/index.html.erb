@@ -1,60 +1,145 @@
-<style>
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+<section class="main">
 
-.navbar{display: none}
-body{font: 14px/28px 'Poppins', sans-serif; letter-spacing: 0.5px; background: #f7f7f7}
-h1{font:600 30px/34px 'Poppins', sans-serif}
-
-.summary{background: #1B1C1E; color: #f7f7f7; padding: 50px; margin: 150px 0 50px; border-radius: 16px; position: relative}
-.summary a{text-decoration: none; font:500 14px/60px 'Poppins', sans-serif; height: 60px; padding: 0 25px; border-radius: 6px; display: inline-block; margin-right: 20px}
-
-.wrapper{max-width: 1280px; margin: 0 auto; padding: 0 20px}
-
-ul{list-style: none; padding: 0}
-li{display: flex; justify-content: space-between; border-bottom: 2px solid #000; padding: 15px 0}
-li:last-child{border-bottom: 0}
-
-.primary{background: #29BF12; color: #fff; transition: 0.3s}
-.primary:hover{background: #39E11F; color: #fff; transition: 0.3s}
-
-.secondary{background: #232325; color: #fff; transition: 0.5s}
-/* .secondary:hover{background: #fff; color: #232325; transition: 0.5s} */
-
-.profile-head{position: absolute; width: 180px; height: 200px; right: 20px; top: -150px; background-size: 190px;
-background-repeat: no-repeat}
-
-
-</style>
-
-<section class="wrapper">
-  <section class="summary">
-    <section class="profile-head" style="background-image: linear-gradient(180deg, rgba(27,28,30,0) 75%, rgba(27,28,30,.99) 95%), url(<%= asset_path 'profile-head.png' %>)"></section>
-    <p>Welcome back Phillip,</p>
-    <h1>You're a Wagon Wheel genius!</h1>
+  <section class="menu">
     <ul>
-      <li><span>Current standing</span><strong>1st</strong></li>
-      <li><span>Best result</span><strong>1st</strong></li>
-      <li><span>Latest result</span><strong>2nd</strong></li>
-    </ul>
-    <a href="#" class="primary">Join game</a><a href="#" class="secondary">Leaderboard</a>
-  </section>
-</section>
-
-
-<section class="wrapper">
-
-  <section class="title">
-    <h3>Upcoming games</h3>
-    <p>3 games remaining</p>
-  </section>
-
-  <section class="cards">
-    <ul>
-      <li></li>
+      <li><a href="#" class="home active">Home</a></li>
+      <li><a href="#" class="leaderboard">Leaderboard</a></li>
+      <li><a href="#" class="results">Results</a></li>
+      <li><a href="#" class="statistics">Statistics</a></li>
+      <li><a href="#" class="profile">Profile</a></li>
     </ul>
   </section>
 
+  <section class="content">
+
+    <section class="wrapper">
+      <section class="summary">
+        <section class="profile-head" style="background-image: linear-gradient(180deg, rgba(27,28,30,0) 75%, rgba(27,28,30,.99) 95%), url(<%= asset_path 'profile-head.png' %>)"></section>
+        <p>Welcome back Phillip,</p>
+        <h1>You're a Wagon Wheel genius!</h1>
+        <ul>
+          <li class="current-standing"><span>Current standing</span><strong>1st</strong></li>
+          <li class="best-result"><span>Best result</span><strong>1st</strong></li>
+          <li class="latest-result"><span>Latest result</span><strong>2nd</strong></li>
+        </ul>
+        <a href="#" class="primary">Join game</a><a href="#" class="secondary">Leaderboard</a>
+      </section>
+    </section>
+
+    <section class="wrapper">
+
+      <section class="title">
+        <h3>Upcoming games</h3>
+        <p>6 games remaining</p>
+      </section>
+
+      <section class="games">
+        <section class="game ruby">
+            <a href="#">
+              <div class="live">
+                <div class="pulse">
+                  <div class="default"></div>
+                  <div class="transition"></div>
+                </div>
+                <h6>Live</h6>
+              </div>
+              <%= image_tag "icon-ruby.svg", class: "icon" %>
+              <h4>OOP</h4>
+              <h5>Iterators and blocks</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game ruby">
+            <a href="#">
+              <%= image_tag "icon-ruby.svg", class: "icon" %>
+              <h4>Ruby</h4>
+              <h5>Hash and symbols</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game fewd">
+            <a href="#">
+              <%= image_tag "icon-fewd.svg", class: "icon" %>
+              <h4>FEWD</h4>
+              <h5>Basic HTML & CSS</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game fewd">
+            <a href="#">
+              <%= image_tag "icon-fewd.svg", class: "icon" %>
+              <h4>FEWD</h4>
+              <h5>Bootstrap, grids and layouts</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game oop">
+            <a href="#">
+              <%= image_tag "icon-oop.svg", class: "icon" %>
+              <h4>OOP</h4>
+              <h5>Basic Object Oriented Programming</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game oop">
+            <a href="#">
+              <%= image_tag "icon-oop.svg", class: "icon" %>
+              <h4>OOP</h4>
+              <h5>Advanced Object Oriented Programming</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+      </section>
+
+    </section>
+
+    <section class="wrapper">
+
+      <section class="title">
+        <h3>Completed games</h3>
+        <p>4 games complete</p>
+      </section>
+
+      <section class="games">
+        <section class="game oop">
+            <a href="#">
+              <%= image_tag "icon-oop.svg", class: "icon" %>
+              <h4>OOP</h4>
+              <h5>Basic Object Oriented Programming</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game ruby">
+            <a href="#">
+              <%= image_tag "icon-ruby.svg", class: "icon" %>
+              <h4>Ruby</h4>
+              <h5>Flows and arrays and more</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game ruby">
+            <a href="#">
+              <%= image_tag "icon-ruby.svg", class: "icon" %>
+              <h4>Ruby</h4>
+              <h5>Programming basics</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+        <section class="game ruby">
+            <a href="#">
+              <%= image_tag "icon-ruby.svg", class: "icon" %>
+              <h4>Ruby</h4>
+              <h5>Basic principles</h5>
+              <span>Play game</span>
+            </a>
+        </section>
+      </section>
+
+    </section>
+  </section>
+
 </section>
 
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+
+<%#= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
