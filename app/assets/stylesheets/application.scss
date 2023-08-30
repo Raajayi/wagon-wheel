@@ -28,7 +28,7 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .oop h4:before{background: #BB05FB}
 .fewd h4:before{background: #0194FF}
 
-.main{display: grid; grid-template-columns: 1fr 4fr}
+.main{display: grid; grid-template-columns: 1fr 4fr; min-height: 100vh}
 .content{overflow: hidden}
 
 .menu{background: #1B1C1E}
