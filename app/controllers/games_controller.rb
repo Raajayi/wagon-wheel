@@ -1,6 +1,10 @@
+require 'set'
+
 class GamesController < ApplicationController
   def index
     @games = Game.all
+    @games_started = Game.started_games(current_user)
+    @games_completed = Game.completed_games(current_user)
   end
 
   def show
