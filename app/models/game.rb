@@ -19,7 +19,6 @@ class Game < ApplicationRecord
 
   def self.completed_games(user)
     responses = user.responses.all
-
     unless responses.nil?
       questions_with_responses = responses.map { |response| response.answer.question }
 
