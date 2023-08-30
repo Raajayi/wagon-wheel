@@ -5,10 +5,11 @@
 .navbar{display: none}
 body{font: 14px/28px 'Poppins', sans-serif; letter-spacing: 0.5px; background: #f7f7f7}
 
-h1{font:600 30px/38px 'Poppins', sans-serif}
+h1{font:600 30px/38px 'Poppins', sans-serif; margin-bottom: 20px}
 h3{font:600 22px/34px 'Poppins', sans-serif}
 h4{font:500 18px/30px 'Poppins', sans-serif}
 h5{font:400 16px/28px 'Poppins', sans-serif}
+h6{font:500 14px/28px 'Poppins', sans-serif; text-transform: uppercase}
 
 h4:before{content:""; display: block; height: 30px; width: 4px; position: absolute; left: 0}
 
@@ -20,22 +21,19 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .content{overflow: hidden}
 
 .menu{background: #1B1C1E}
-.menu ul{position: sticky; list-style: none; padding: 30px; top: 50px}
-.menu ul li a{color: #f7f7f7; text-decoration: none; padding: 10px 40px; display: block; opacity: 0.3; transition: 0.3s}
+.menu ul{position: sticky; list-style: none; margin: 0; padding: 0 30px; top: 50px}
+.menu ul li a{color: #f7f7f7; text-decoration: none; padding: 10px 40px; display: block; opacity: 0.3; transition: 0.3s; background-position: 0 10px; background-size: 25px}
 .menu ul li a:hover{opacity: 1; transition: 0.3s}
 
 .menu ul li a.active{opacity: 1}
 
-.menu ul li a.home{background: url(<%= asset_path 'icon-menu-home.svg' %>); background-repeat: no-repeat; background-position: 0 10px; background-size: 25px}
-.menu ul li a.leaderboard{background: url(<%= asset_path 'icon-menu-leaderboard.svg' %>); background-repeat: no-repeat; background-position: 0 10px; background-size: 25px}
-.menu ul li a.results{background: url(<%= asset_path 'icon-menu-results.svg' %>); background-repeat: no-repeat; background-position: 0 10px; background-size: 25px}
-.menu ul li a.statistics{background: url(<%= asset_path 'icon-menu-statistics.svg' %>); background-repeat: no-repeat; background-position: 0 10px; background-size: 25px}
-.menu ul li a.profile{background: url(<%= asset_path 'icon-menu-profile.svg' %>); background-repeat: no-repeat; background-position: 0 10px; background-size: 25px}
-
-
+.menu ul li a.home{background-image: url(<%= asset_path 'icon-menu-home.svg' %>); background-repeat: no-repeat}
+.menu ul li a.leaderboard{background-image: url(<%= asset_path 'icon-menu-leaderboard.svg' %>); background-repeat: no-repeat}
+.menu ul li a.results{background-image: url(<%= asset_path 'icon-menu-results.svg' %>); background-repeat: no-repeat}
+.menu ul li a.statistics{background-image: url(<%= asset_path 'icon-menu-statistics.svg' %>); background-repeat: no-repeat}
+.menu ul li a.profile{background-image: url(<%= asset_path 'icon-menu-profile.svg' %>); background-repeat: no-repeat}
 
 .wrapper{padding: 0 30px}
-
 
 .summary{background: #1B1C1E; color: #f7f7f7; padding: 50px; margin: 150px 0 50px; border-radius: 16px; position: relative}
 .summary a{text-decoration: none; font:500 14px/60px 'Poppins', sans-serif; height: 60px; padding: 0 25px; border-radius: 6px; display: inline-block; margin-right: 20px}
@@ -68,7 +66,16 @@ background-repeat: no-repeat}
 .games .game a{text-decoration: none; color: #1b1c1e; padding: 40px; display: block; background: #fff; border-radius: 12px; height: 350px; position: relative; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05)}
 .games .game span{font:500 14px/28px 'Poppins', sans-serif; position: absolute; bottom: 40px; color: #29BF12}
 
+.live{position: absolute; top: 30px; right: 30px; color: #29BF12}
+.live .pulse{position: absolute; margin: 8px 0 0 -20px}
+.live .pulse .default{width: 10px; height: 10px; position: relative; background: #29BF12; border: 1px solid #f7f7f7; border-radius: 50%; z-index: 1; display: block}
+.live .pulse .transition{width: 20px; height: 20px; position: absolute; top: -5px; left: -5px; display: block; background: #29BF12; border-radius: 50%; opacity: 0; animation: pulse 2400ms ease-out infinite}
 
+@keyframes pulse{
+    0%{transform:scale(0.1); -ms-transform:scale(0.1); -webkit-transform:scale(0.1); opacity:0}
+    50%{opacity:0.8}
+    100%{transform:scale(1.2);-ms-transform:scale(1.2);-webkit-transform:scale(1.2);opacity:0}
+}
 
 @media(max-width: 1299px){
   .games{grid-template-columns: 1fr 1fr 1fr}
@@ -79,23 +86,33 @@ background-repeat: no-repeat}
   .games .game a{padding: 30px}
 }
 
-@media(max-width: 767px){
-  .wrapper:not(:first-of-type) {
-  padding: 0 0 0 30px;
+@media(max-width: 799px){
+  .wrapper:not(:first-of-type){padding: 0 0 0 30px}
+  .games{display: flex; overflow-x: scroll; -webkit-overflow-scrolling: touch}
+  .game{display: flex; flex-direction: column; flex: 0 0 250px}
+  .game:last-of-type{margin: 0 30px 0 0}
+  .summary{padding: 80px 30px 30px}
+  .summary a{padding: 0 22px; margin-right: 15px}
+  .profile-head{left: 0; right: 0; margin: 0 auto}
 }
-  .games{
-    display: flex;
-    overflow-x: scroll;
-    /* margin-right: 30px */
-  }
-  .game {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 250px
-  }
-  .game:last-of-type{
-    margin: 0 30px 0 0;
-  }
+
+@media(max-width: 699px){
+
+  .wrapper{padding: 0 20px}
+  .summary{padding: 80px 20px 20px; margin: 200px 0 50px}
+
+  .main{display: block; padding-bottom: 100px}
+  .menu{position: fixed; bottom: 0; width: 100%; z-index: 1; background: #f7f7f7}
+  .menu ul{display: flex; justify-content: space-around; padding: 0 10px}
+  .menu ul li{display: inline}
+  .menu ul li a{color: #1B1C1E; background-position: center 20px; background-size: 25px; padding: 50px 0 20px; font-size: 10px}
+
+  .menu ul li a.home{background-image: url(<%= asset_path 'icon-menu-home-dark.svg' %>); background-repeat: no-repeat}
+  .menu ul li a.leaderboard{background-image: url(<%= asset_path 'icon-menu-leaderboard-dark.svg' %>); background-repeat: no-repeat}
+  .menu ul li a.results{background-image: url(<%= asset_path 'icon-menu-results-dark.svg' %>); background-repeat: no-repeat}
+  .menu ul li a.statistics{background-image: url(<%= asset_path 'icon-menu-statistics-dark.svg' %>); background-repeat: no-repeat}
+  .menu ul li a.profile{background-image: url(<%= asset_path 'icon-menu-profile-dark.svg' %>); background-repeat: no-repeat}
+
 }
 
 </style>
@@ -104,11 +121,11 @@ background-repeat: no-repeat}
 
   <section class="menu">
     <ul>
-      <li><a href="" class="home active">Home</a></li>
-      <li><a href="" class="leaderboard">Leaderboard</a></li>
-      <li><a href="" class="results">Results</a></li>
-      <li><a href="" class="statistics">Statistics</a></li>
-      <li><a href="" class="profile">Profile</a></li>
+      <li><a href="#" class="home active">Home</a></li>
+      <li><a href="#" class="leaderboard">Leaderboard</a></li>
+      <li><a href="#" class="results">Results</a></li>
+      <li><a href="#" class="statistics">Statistics</a></li>
+      <li><a href="#" class="profile">Profile</a></li>
     </ul>
   </section>
 
@@ -138,6 +155,13 @@ background-repeat: no-repeat}
       <section class="games">
         <section class="game ruby">
             <a href="#">
+              <div class="live">
+                <div class="pulse">
+                  <div class="default"></div>
+                  <div class="transition"></div>
+                </div>
+                <h6>Live</h6>
+              </div>
               <%= image_tag "icon-ruby.svg", class: "icon" %>
               <h4>OOP</h4>
               <h5>Iterators and blocks</h5>
