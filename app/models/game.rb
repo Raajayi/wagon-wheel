@@ -7,7 +7,7 @@ class Game < ApplicationRecord
     responses.where(user: user).sum(:score)
   end
 
-  def self.completed_games(user)
+  def self.started_games(user)
     responses = user.responses.all
     # Find out which games those responses come from
     unless responses.nil?
