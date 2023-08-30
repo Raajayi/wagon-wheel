@@ -1,14 +1,39 @@
-<h4>Questions</h4>
 
-<p><%= @question.content %></p>
+<section class="main questions">
 
-<%= simple_form_for(@response) do |f| %>
+  <section class="menu">
+    <ul>
+      <li><a href="#" class="home active">Home</a></li>
+      <li><a href="#" class="leaderboard">Leaderboard</a></li>
+      <li><a href="#" class="results">Results</a></li>
+      <li><a href="#" class="statistics">Statistics</a></li>
+      <li><a href="#" class="profile">Profile</a></li>
+    </ul>
+  </section>
 
-  <div class="form-inputs">
-    <%= f.collection_radio_buttons :answer_id, @question.answers, :id, :content %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit, value: "Submit" %>
-  </div>
+  <section class="content">
+    <section class="wrapper">
 
-<% end %>
+      <section class="details">
+        <h3>Question 1 of 3</h3>
+        <p><strong>Ruby:</strong> Hash and symbols</p>
+      </section>
+
+      <section class="question">
+        <p><%= @question.content %></p>
+      </section>
+
+      <%= simple_form_for(@response) do |f| %>
+
+        <div class="form-inputs">
+          <%= f.collection_radio_buttons :answer_id, @question.answers, :id, :content %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, value: "Submit answer", class: "primary button" %>
+        </div>
+
+      <% end %>
+    </section>
+
+  </section>
+</section>

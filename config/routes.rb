@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   unauthenticated(:user) do
     root to: "pages#landing", as: :landing
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
 
 
   resources :pages, only: [:index]
+  get '/profile', to: 'pages#profile', as: 'profile'
 
   resources :questions, only: [:show]
   resources :answers, only: [:show]

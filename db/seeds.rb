@@ -17,7 +17,10 @@ puts "Started seeding"
 
 puts "Seeding Ruby quiz"
 
-ruby = Game.create!(topic: "Ruby")
+ruby = Game.create!(title: "Programming Basics", topic: "Ruby")
+Game.create!(title: "Flows and arrays", topic: "Ruby")
+Game.create!(title: "Iterators and blocks", topic: "Ruby")
+Game.create!(title: "Hash and symbols", topic: "Ruby")
 
 ruby_1 = Question.create!(content: "What does (1..5).to_a return?", game: ruby, order: 1)
 ruby_2 = Question.create!(content: "What is the opposite of the while loop?", game: ruby, order: 2)
@@ -41,7 +44,8 @@ Answer.create!(content: "condition = code_when_truthy | code_when_falsy", correc
 puts "============================================================================================="
 puts "Seeding OOP quiz"
 
-oop = Game.create!(topic: "OOP")
+oop = Game.create!(title: "Basic OOP", topic: "OOP")
+Game.create!(title: "Advanced OOP", topic: "OOP")
 
 oop_1 = Question.create!(content: "In a Controller, what are the instance methods reffered as?", game: oop, order: 1)
 oop_2 = Question.create!(content: "Why do we use private within a class?", game: oop, order: 2)
@@ -65,7 +69,8 @@ Answer.create!(content: "Super calls the parent's method which has the same name
 puts "============================================================================================="
 puts "Seeding html quiz"
 
-html = Game.create!(topic: "HTML & CSS")
+html = Game.create!(title: "HTML & CSS", topic: "FEWD")
+Game.create!(title: "Bootstrap, grids and layouts", topic: "FEWD")
 
 html_1 = Question.create!(content: "What is a CSS id and why is it useful?", game: html, order: 1)
 html_2 = Question.create!(content: "How do you emphasize a word in a paragraph?", game: html, order: 2)
