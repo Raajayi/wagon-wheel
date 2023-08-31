@@ -15,7 +15,8 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
-    @users = User.all
+    # @users = User.all
+    @users = User.leaderboard_ranked
   end
 
   def results

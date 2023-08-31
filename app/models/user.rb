@@ -21,8 +21,10 @@ class User < ApplicationRecord
     return total_score
   end
 
-  def leaderboard_ranked
-
+  def self.leaderboard_ranked
+    all_users = all
+    ranked_users = all_users.sort_by(&:current_total_score).reverse
+    return ranked_users
   end
 end
 #  @users.second.responses.fourth.score
