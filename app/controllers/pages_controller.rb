@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
+    @users = User.all
   end
 
   def results
