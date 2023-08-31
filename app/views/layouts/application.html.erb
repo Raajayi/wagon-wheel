@@ -10,15 +10,20 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <section class="main">
-  <% unless current_page?(root_path) && !user_signed_in? || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
-      <%= render "shared/navbar" %>
-    <% end %>
-      <%= yield %>
+  <body class="<%= controller.controller_name %>-template">
+
+      <% unless current_page?(root_path) && !user_signed_in? || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_password_path)%>
+        <section class="main">
+        <%= render "shared/navbar" %>
+      <% end %>
+
+      <section class="content">
+        <%= yield %>
+      </section>
+
     </section>
 
-  <%= render "shared/flashes" %>
+    <%= render "shared/flashes" %>
 
   </body>
 </html>
