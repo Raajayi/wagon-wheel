@@ -10,4 +10,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   # validates :email, presence: true
+  def current_points
+    return 42_069
+    # get the responses that the user had
+    # total up the score
+  end
 end
