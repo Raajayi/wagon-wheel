@@ -15,8 +15,8 @@
 
 .navbar{display: none !important}
 
-body{font: 14px/28px "Poppins", sans-serif; letter-spacing: 0.5px; background: #f7f7f7}
-img{max-width: 100%; height: 100%}
+body{font: 14px/28px "Poppins", sans-serif; letter-spacing: 0.5px; background: #f7f7f7; color: #1B1C1E}
+img{max-width: 100%; height: auto}
 
 h1{font:600 30px/38px "Poppins", sans-serif; margin-bottom: 20px}
 h2{font:600 22px/34px "Poppins", sans-serif}
@@ -52,7 +52,7 @@ body.profile .menu ul li a.profile, body.edit .menu ul li a.profile{opacity: 1}
 .menu ul li a.profile{background-image: url("icon-menu-profile.svg"); background-repeat: no-repeat}
 .menu ul li a.logout{background-image: url("icon-menu-logout.svg"); background-repeat: no-repeat; position: fixed; bottom: 40px}
 
-.wrapper{padding: 0 30px}
+.questions .wrapper{padding: 0 30px}
 
 .summary{background: #1B1C1E; color: #f7f7f7; padding: 50px; margin: 150px 0 50px; border-radius: 16px; position: relative}
 
@@ -67,8 +67,6 @@ body.profile .menu ul li a.profile, body.edit .menu ul li a.profile{opacity: 1}
 .summary ul li.latest-result{background: url("icon-summary-latest-result.svg"); background-repeat: no-repeat; background-position: 5px 15px}
 
 .button{text-decoration: none; font:500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 40px; border-radius: 6px; display: inline-block}
-
-// margin-right: 20px; padding: 0 25px;
 
 a{text-decoration: none; color: #1B1C1E}
 
@@ -89,9 +87,9 @@ background-repeat: no-repeat}
 .games .game a{text-decoration: none; color: #1b1c1e; padding: 40px; display: block; background: #fff; border-radius: 12px; height: 350px; position: relative; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05)}
 .games .game span{font:500 14px/28px "Poppins", sans-serif; position: absolute; bottom: 40px; color: #29BF12}
 
-.questions{background: #fff; height: 100%}
-.questions .details{padding: 50px 0 0}
-.questions .question{font: 16px/32px "Poppins", sans-serif; margin: 40px 0}
+.questions{background: #fff; height: 100vh}
+.questions .details{padding: 30px 0 0}
+.questions .question{font: 16px/32px "Poppins", sans-serif; margin: 20px 0 30px}
 .questions .form-inputs{margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px}
 
 .questions .form-inputs span:nth-of-type(1) input[type="radio"] + label:before{content: "A"}
@@ -103,7 +101,7 @@ background-repeat: no-repeat}
 .questions .form-inputs input[type="radio"] + label {display: flex; align-items: center; background: #f7f7f7; padding: 25px; width: 100%; border-radius: 12px; cursor: pointer; min-height: 120px}
 .questions .form-inputs input[type="radio"]:checked + label{font-weight: bold; color: #f7f7f7; background: #1B1C1E}
 
-.questions .form-inputs input[type="radio"] + label:before{height: 60px; width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 56px; border-radius: 60px; font-weight: bold; font-size: 22px}
+.questions .form-inputs input[type="radio"] + label:before{height: 60px; min-width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 56px; border-radius: 60px; font-weight: bold; font-size: 22px}
 .questions .form-inputs input[type="radio"]:checked + label:before{border-color: #fff}
 
 .landing{text-align: center; height: 100vh; overflow: hidden}
@@ -111,9 +109,9 @@ background-repeat: no-repeat}
 .landing .wheel{animation: rotation 12s infinite linear; position: fixed; left: 0; right: 0; margin: 125px auto 0}
 .landing .pin{position: absolute; left: 0; right: 0; margin: 75px auto; z-index: 1}
 
-.pages-template .content, .registrations-template .content{padding: 30px}
+.pages-template .content, .registrations-template .content, .games-template .content{padding: 30px}
 
-// .sessions-template, .registrations-template, .passwords-template{max-width: 350px; margin: 100px auto 0}
+.sessions-template.new, .registrations-template.new, .passwords-template.new{max-width: 450px; margin: 60px auto 0}
 .sessions-template .form-inputs, .registrations-template .form-inputs, .passwords-template .form-inputs{margin: 40px 0 0}
 .sessions-template label, .registrations-template label, .passwords-template label{font-size: 16px}
 .sessions-template .form-control, .registrations-template .form-control, .passwords-template .form-control{background: #fff; border: 0; padding: 18px; border-radius: 8px}
@@ -125,7 +123,10 @@ background-repeat: no-repeat}
 
 .pages-template .profile-photo{max-width: 120px; background: #D1E9FF; border-radius: 100px; margin: 0 0 40px}
 .pages-template .user-details{margin-bottom: 40px}
-.pages-template .actions{position: absolute; bottom: 30px}
+
+.actions{position: absolute; bottom: 30px}
+
+.game-score{font-size: 130px; font-weight: 600; background: #1B1C1E; height: 300px; width: 300px; margin: 80px auto; text-align: center; line-height: 300px; border-radius: 300px; color: #f7f7f7}
 
 
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
@@ -157,7 +158,7 @@ background-repeat: no-repeat}
 }
 
 @media(max-width: 799px){
-  .wrapper:not(:first-of-type){padding: 0 0 0 30px}
+  // .wrapper:not(:first-of-type){padding: 0 0 0 30px}
   .games{display: flex; overflow-x: scroll; -webkit-overflow-scrolling: touch}
   .game{display: flex; flex-direction: column; flex: 0 0 250px}
   .game:last-of-type{margin: 0 30px 0 0}
@@ -168,7 +169,7 @@ background-repeat: no-repeat}
 
 @media(max-width: 699px){
 
-  .wrapper{padding: 0 20px}
+  .questions .wrapper{padding: 0 20px}
   .summary{padding: 80px 20px 20px; margin: 200px 0 50px}
 
   .main{display: block; padding-bottom: 100px}
@@ -192,8 +193,9 @@ background-repeat: no-repeat}
   .landing .wheel{margin: 225px auto 0; animation: rotation 8s infinite linear}
   .landing .pin{margin: 200px auto 0; max-width: 50px}
 
-  .pages-template .content, .registrations-template .content{padding: 20px}
-  .pages-template .actions{position: relative; bottom: 0}
+  .pages-template .content, .registrations-template .content, .games-template .content{padding: 20px}
+
+  .actions{position: relative; bottom: 0}
 
 
 }

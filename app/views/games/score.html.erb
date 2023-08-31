@@ -1,3 +1,6 @@
-<h1>Your score</h1>
+<h1>Game result</h1>
 
-<%= @total_score %>
+<p>Great job <%= current_user.first_name %>!</p>
+<section class="game-score">
+  <%= @total_score %>
+</section>
