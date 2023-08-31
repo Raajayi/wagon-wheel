@@ -1,9 +1,17 @@
-<h1>WAGON WHEEL</h1>
 
-<p>Flashcards made better. Sign up today and win Bintangs!</p>
 
-<%= link_to "Create an account", new_user_registration_path %>
+<section class="landing">
 
-<p>Already registered? <%= link_to "Login", new_user_session_path %></p>
-<%= image_tag "wheel.png" %>
+  <section class="wrapper">
 
+    <%= image_tag "logo-primary.svg" %><br><br>
+    <h4>Flashcards made better. Sign up today and win Bintangs!</h4><br>
+    <%= link_to "Create an account", new_user_registration_path, class: "secondary button" %><br><br>
+    <p><%= link_to "Already registered? Login", new_user_session_path %></p>
+
+  </section>
+
+  <%= image_tag "pin.svg", class: "pin" %>
+  <%= image_tag "wheel.svg", class: "wheel" %>
+
+</section>

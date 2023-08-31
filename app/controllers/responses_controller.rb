@@ -15,7 +15,7 @@ class ResponsesController < ApplicationController
         #  total score
         redirect_to score_game_path(@response.answer.question.game)
       else
-        redirect_to question_path(next_question), notice: "Booking Created!"
+        redirect_to question_path(next_question), notice: "Answer submitted!"
       end
 
     #else

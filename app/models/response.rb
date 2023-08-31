@@ -7,6 +7,7 @@ class Response < ApplicationRecord
   end
 
   def eval_score
-    self.score = correct? ? 1 : -1
+    # self.score = correct? ? 1 : -1
+    self.score = correct? ? 1 : 0
   end
 end
