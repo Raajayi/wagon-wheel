@@ -3,8 +3,7 @@
   <p>X games total | Y games started | Z games completed </p>
 
 
-
-
+<%# debugger %>
 
 
 <% @users.each do |user|%>
@@ -25,7 +24,7 @@
       <% end %>
     </div>
     <div class="card-body">
-      <h3>Points: <%= user.current_points %></h3>
+      <h3>Points: <%= user.current_total_score %></h3>
       <h3>Ranking: YY</h3>
     </div>
 

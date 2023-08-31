@@ -10,9 +10,19 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   # validates :email, presence: true
-  def current_points
-    return 42_069
+  def current_total_score
+    # return 42_069
     # get the responses that the user had
     # total up the score
+    total_score = 0
+    responses.each do |response|
+      total_score += response.score
+    end
+    return total_score
+  end
+
+  def leaderboard_ranked
+
   end
 end
+#  @users.second.responses.fourth.score
