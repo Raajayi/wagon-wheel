@@ -19,6 +19,7 @@ body{font: 14px/28px "Poppins", sans-serif; letter-spacing: 0.5px; background: #
 img{max-width: 100%}
 
 h1{font:600 30px/38px "Poppins", sans-serif; margin-bottom: 20px}
+h2{font:600 22px/34px "Poppins", sans-serif}
 h3{font:600 22px/34px "Poppins", sans-serif}
 h4{font:500 18px/30px "Poppins", sans-serif}
 h5{font:400 16px/28px "Poppins", sans-serif}
@@ -83,8 +84,8 @@ background-repeat: no-repeat}
 .games .game a{text-decoration: none; color: #1b1c1e; padding: 40px; display: block; background: #fff; border-radius: 12px; height: 350px; position: relative; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05)}
 .games .game span{font:500 14px/28px "Poppins", sans-serif; position: absolute; bottom: 40px; color: #29BF12}
 
-.questions{background: #fff}
-.questions .details{margin: 50px 0 0}
+.questions{background: #fff; height: 100%}
+.questions .details{padding: 50px 0 0}
 .questions .question{font: 16px/32px "Poppins", sans-serif; margin: 40px 0}
 .questions .form-inputs{margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px}
 
@@ -97,13 +98,23 @@ background-repeat: no-repeat}
 .questions .form-inputs input[type="radio"] + label {display: flex; align-items: center; background: #f7f7f7; padding: 25px; width: 100%; border-radius: 12px; cursor: pointer; min-height: 120px}
 .questions .form-inputs input[type="radio"]:checked + label{font-weight: bold; color: #f7f7f7; background: #1B1C1E}
 
-.questions .form-inputs input[type="radio"] + label:before{height: 60px; width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 56px; border-radius: 60px; font-weight: bold; font-size: 22px; flex: 1 0 auto}
+.questions .form-inputs input[type="radio"] + label:before{height: 60px; width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 56px; border-radius: 60px; font-weight: bold; font-size: 22px}
 .questions .form-inputs input[type="radio"]:checked + label:before{border-color: #fff}
 
 .landing{text-align: center; height: 100vh; overflow: hidden}
 .landing .wrapper{max-width: 350px; margin: 100px auto 0}
 .landing .wheel{animation: rotation 12s infinite linear; position: fixed; left: 0; right: 0; margin: 125px auto 0}
 .landing .pin{position: absolute; left: 0; right: 0; margin: 75px auto; z-index: 1}
+
+.sessions-template, .registrations-template, .passwords-template{max-width: 350px; margin: 100px auto 0}
+.sessions-template .form-inputs, .registrations-template .form-inputs, .passwords-template .form-inputs{margin: 40px 0 0}
+.sessions-template label, .registrations-template label, .passwords-template label{font-size: 16px}
+.sessions-template .form-control, .registrations-template .form-control, .passwords-template .form-control{background: #fff; border: 0; padding: 18px; border-radius: 8px}
+.sessions-template .form-control:focus, .registrations-template .form-control:focus, .passwords-template .form-control:focus{box-shadow: none}
+.sessions-template .btn, .registrations-template .btn, .passwords-template .btn{text-decoration: none; font: 500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 40px; border-radius: 6px; display: inline-block; background: #232325; color: #fff; transition: 0.5s; margin: 0 0 40px}
+.sessions-template a, .registrations-template a, .passwords-template a{display: block}
+
+.form-text{position: absolute; display: none}
 
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}

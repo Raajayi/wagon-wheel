@@ -1,5 +1,4 @@
 
-  <section class="content">
     <% if current_user.photo.attached? %>
       <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
     <% else %>
@@ -11,5 +10,3 @@
 
     <%= link_to "Edit profile", edit_user_registration_path, class: "secondary button" %>
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "secondary button"%>
-
-  </section>
