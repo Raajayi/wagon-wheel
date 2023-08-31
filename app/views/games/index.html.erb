@@ -1,4 +1,4 @@
-  <section class="content">
+
 
     <section class="wrapper">
       <section class="summary">
@@ -23,9 +23,9 @@
 
       <section class="games">
         <% @games.each do |game| %>
-          <section class="game ruby">
+          <section class="game <%= game.topic.downcase %>">
               <a href="games/<%= game.id %>">
-                <%= image_tag "icon-ruby.svg", class: "icon" %>
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
                 <span>Play game</span>
@@ -45,9 +45,9 @@
 
       <section class="games">
         <% @games_started.each do |game| %>
-          <section class="game ruby">
+          <section class="game <%= game.topic.downcase %>">
               <a href="games/<%= game.id %>">
-                <%= image_tag "icon-ruby.svg", class: "icon" %>
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
                 <span>Continue game</span>
@@ -67,9 +67,9 @@
 
       <section class="games">
         <% @games_completed.each do |game| %>
-          <section class="game ruby">
+          <section class="game <%= game.topic.downcase %>">
               <a href="games/<%= game.id %>">
-                <%= image_tag "icon-ruby.svg", class: "icon" %>
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
                 <span>Play again</span>
@@ -79,5 +79,3 @@
       </section>
 
     </section>
-
-  </section>
