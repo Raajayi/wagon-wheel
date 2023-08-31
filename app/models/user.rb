@@ -11,20 +11,12 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   # validates :email, presence: true
   def current_total_score
-    # return 42_069
-    # get the responses that the user had
-    # total up the score
     total_score = 0
-    responses.each do |response|
-      total_score += response.score
-    end
+    responses.each { |response| total_score += response.score }
     return total_score
   end
 
   def self.leaderboard_ranked
-    all_users = all
-    ranked_users = all_users.sort_by(&:current_total_score).reverse
-    return ranked_users
+    all.sort_by(&:current_total_score).reverse
   end
 end
-#  @users.second.responses.fourth.score

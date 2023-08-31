@@ -15,8 +15,11 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
-    # @users = User.all
     @users = User.leaderboard_ranked
+    @games_count = {}
+    @games_count[:all] = Game.all.size
+    @games_count[:started] = Game.started_games(current_user).size
+    @games_count[:completed] = Game.completed_games(current_user).size
   end
 
   def results
