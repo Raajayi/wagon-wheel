@@ -1,6 +1,7 @@
     <section class="profile-photo">
     <% if current_user.photo.attached? %>
       <%= cl_image_tag @current_user.photo.key, height: 400, width: 400, crop: :fill %>
+      <%= cl_image_tag @current_user.photo.key, height: 400, width: 400, crop: :fill %>
     <% else %>
       <%= image_tag "https://res.cloudinary.com/di3nglsxk/image/upload/v1693369410/dceh7obwsrrgflafx9uc.png", height: 300, width: 400 %>
     <% end %>
