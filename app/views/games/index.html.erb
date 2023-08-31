@@ -1,14 +1,13 @@
 
-
 <section class="main">
 
   <section class="menu">
     <ul>
-      <li><a href="#" class="home active">Home</a></li>
+      <li><%= link_to 'Home', root_path, class: "home active"  %></li>
       <li><a href="#" class="leaderboard">Leaderboard</a></li>
       <li><a href="#" class="results">Results</a></li>
       <li><a href="#" class="statistics">Statistics</a></li>
-      <li><a href="#" class="profile">Profile</a></li>
+      <li><%= link_to "Profile", profile_path, class: "profile"  %></li>
     </ul>
   </section>
 
