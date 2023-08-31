@@ -1,44 +1,99 @@
-<div class="container">
-  <h2>All Games</h2>
-  <div id="games">
-    <% @games.each do |game| %>
-
-      <h4><%= game.topic %></h4>
-      <p><%= game.title %></p>
-
-      <%= link_to "Play game", game %>
-
-    <% end %>
-  </div>
-
-  <br>
-
-  <h2>Started Games</h2>
-  <div id="games-completed">
-    <% @games_started.each do |game| %>
-
-      <h4><%= game.topic %></h4>
-      <p><%= game.title %></p>
-
-      <%= link_to "Continue playing", game %>
-
-    <% end %>
-  </div>
-
-  <br>
-
-  <h2>Completed Games</h2>
-  <div id="games-completed">
-    <% @games_completed.each do |game| %>
-
-      <h4><%= game.topic %></h4>
-      <p><%= game.title %></p>
-
-      <%= link_to "Play again", game %>
-
-    <% end %>
-  </div>
-  </div>
 
 
-</div>
+<section class="main">
+
+  <section class="menu">
+    <ul>
+      <li><a href="#" class="home active">Home</a></li>
+      <li><a href="#" class="leaderboard">Leaderboard</a></li>
+      <li><a href="#" class="results">Results</a></li>
+      <li><a href="#" class="statistics">Statistics</a></li>
+      <li><a href="#" class="profile">Profile</a></li>
+    </ul>
+  </section>
+
+  <section class="content">
+
+    <section class="wrapper">
+      <section class="summary">
+        <section class="profile-head" style="background-image: linear-gradient(180deg, rgba(27,28,30,0) 75%, rgba(27,28,30,.99) 95%), url(<%= asset_path 'profile-head.png' %>)"></section>
+        <p>Welcome back <%= current_user.first_name %>,</p>
+        <h1>You're a Wagon Wheel genius!</h1>
+        <ul>
+          <li class="current-standing"><span>Current standing</span><strong>1st</strong></li>
+          <li class="best-result"><span>Best result</span><strong>1st</strong></li>
+          <li class="latest-result"><span>Latest result</span><strong>2nd</strong></li>
+        </ul>
+        <a href="#" class="primary button">Join game</a><a href="#" class="secondary button">Leaderboard</a>
+      </section>
+    </section>
+
+    <section class="wrapper">
+
+      <section class="title">
+        <h3>Upcoming games</h3>
+        <p>6 games remaining</p>
+      </section>
+
+      <section class="games">
+        <% @games.each do |game| %>
+          <section class="game ruby">
+              <a href="games/<%= game.id %>">
+                <%= image_tag "icon-ruby.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                <span>Play game</span>
+              </a>
+          </section>
+        <% end %>
+      </section>
+
+    </section>
+
+    <section class="wrapper">
+
+      <section class="title">
+        <h3>Started games</h3>
+        <p>2 games started</p>
+      </section>
+
+      <section class="games">
+        <% @games_started.each do |game| %>
+          <section class="game ruby">
+              <a href="games/<%= game.id %>">
+                <%= image_tag "icon-ruby.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                <span>Continue game</span>
+              </a>
+          </section>
+        <% end %>
+      </section>
+
+    </section>
+
+    <section class="wrapper">
+
+      <section class="title">
+        <h3>Completed games</h3>
+        <p>4 games completed</p>
+      </section>
+
+      <section class="games">
+        <% @games_completed.each do |game| %>
+          <section class="game ruby">
+              <a href="games/<%= game.id %>">
+                <%= image_tag "icon-ruby.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                <span>Play again</span>
+              </a>
+          </section>
+        <% end %>
+      </section>
+
+    </section>
+
+  </section>
+
+</section>

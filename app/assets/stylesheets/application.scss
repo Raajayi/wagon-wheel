@@ -13,8 +13,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-.navbar{display: none}
+.navbar{display: none !important}
+
 body{font: 14px/28px "Poppins", sans-serif; letter-spacing: 0.5px; background: #f7f7f7}
+img{max-width: 100%}
 
 h1{font:600 30px/38px "Poppins", sans-serif; margin-bottom: 20px}
 h3{font:600 22px/34px "Poppins", sans-serif}
@@ -48,11 +50,7 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 
 .summary{background: #1B1C1E; color: #f7f7f7; padding: 50px; margin: 150px 0 50px; border-radius: 16px; position: relative}
 
-
-.button{text-decoration: none; font:500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 25px; border-radius: 6px; display: inline-block; margin-right: 20px}
-
-
-.summary ul{list-style: none; padding: 0}
+.summary ul{list-style: none; padding: 0; margin: 20px 0 30px}
 .summary ul li{display: flex; justify-content: space-between; border-bottom: 2px solid #000; padding: 15px 0}
 .summary ul li:last-child{border-bottom: 0}
 
@@ -62,8 +60,13 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .summary ul li.best-result{background: url("icon-summary-best-result.svg"); background-repeat: no-repeat; background-position: 5px 15px}
 .summary ul li.latest-result{background: url("icon-summary-latest-result.svg"); background-repeat: no-repeat; background-position: 5px 15px}
 
+.button{text-decoration: none; font:500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 40px; border-radius: 6px; display: inline-block}
 
-.primary{background: #29BF12; color: #fff; transition: 0.3s}
+// margin-right: 20px; padding: 0 25px;
+
+a{text-decoration: none; color: #1B1C1E}
+
+.primary{background: #29BF12; color: #fff; margin-right: 20px; transition: 0.3s}
 .primary:hover{background: #39E11F; color: #fff; transition: 0.3s}
 
 .secondary{background: #232325; color: #fff; transition: 0.5s}
@@ -89,14 +92,17 @@ background-repeat: no-repeat}
 .questions .form-inputs span:nth-of-type(3) input[type="radio"] + label:before{content: "C"}
 .questions .form-inputs span:nth-of-type(4) input[type="radio"] + label:before{content: "D"}
 
-input[type="radio"]{appearance: none; display: none}
-input[type="radio"] + label {display: flex; align-items: center; background: #f7f7f7; padding: 25px; width: 100%; border-radius: 12px; cursor: pointer; min-height: 120px}
-input[type="radio"]:checked + label{font-weight: bold; color: #f7f7f7; background: #1B1C1E}
+.questions .form-inputs input[type="radio"]{appearance: none; display: none}
+.questions .form-inputs input[type="radio"] + label {display: flex; align-items: center; background: #f7f7f7; padding: 25px; width: 100%; border-radius: 12px; cursor: pointer; min-height: 120px}
+.questions .form-inputs input[type="radio"]:checked + label{font-weight: bold; color: #f7f7f7; background: #1B1C1E}
 
-input[type="radio"] + label:before{height: 60px; width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 58px; border-radius: 60px; font-weight: bold; font-size: 22px}
-input[type="radio"]:checked + label:before{border-color: #fff}
+.questions .form-inputs input[type="radio"] + label:before{height: 60px; width: 60px; border: 2px solid #1B1C1E; text-align: center; margin-right: 20px; line-height: 56px; border-radius: 60px; font-weight: bold; font-size: 22px; flex: 1 0 auto}
+.questions .form-inputs input[type="radio"]:checked + label:before{border-color: #fff}
 
-
+.landing{text-align: center; height: 100vh; overflow: hidden}
+.landing .wrapper{max-width: 350px; margin: 100px auto 0}
+.landing .wheel{animation: rotation 12s infinite linear; position: fixed; left: 0; right: 0; margin: 125px auto 0}
+.landing .pin{position: absolute; left: 0; right: 0; margin: 75px auto; z-index: 1}
 
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}
@@ -109,6 +115,10 @@ input[type="radio"]:checked + label:before{border-color: #fff}
     100%{transform:scale(1.2);-ms-transform:scale(1.2);-webkit-transform:scale(1.2);opacity:0}
 }
 
+@keyframes rotation{
+  from{transform:rotate(0)}to{transform:rotate(360deg)}
+}
+
 @media(max-width: 1299px){
   .games{grid-template-columns: 1fr 1fr 1fr}
 }
@@ -118,6 +128,7 @@ input[type="radio"]:checked + label:before{border-color: #fff}
   .games .game a{padding: 30px}
 
   .questions .form-inputs{grid-template-columns: 1fr}
+  .questions .form-inputs input[type="radio"] + label:before{flex: none}
 
 }
 
@@ -151,6 +162,9 @@ input[type="radio"]:checked + label:before{border-color: #fff}
   .questions .menu{display: none}
 
   .questions .question{margin: 20px 0}
-  input[type="radio"] + label{padding: 10px; min-height: 100px}
+  .questions .form-inputs input[type="radio"] + label{padding: 10px; min-height: 100px}
+
+  .landing .wheel{margin: 225px auto 0; animation: rotation 8s infinite linear}
+  .landing .pin{margin: 200px auto 0; max-width: 50px}
 
 }
