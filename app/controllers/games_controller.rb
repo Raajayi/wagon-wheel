@@ -5,6 +5,9 @@ class GamesController < ApplicationController
     @games = Game.all
     @games_started = Game.started_games(current_user)
     @games_completed = Game.completed_games(current_user)
+    @user_first_name = current_user.first_name
+    @user_last_name = current_user.last_name
+    @user_email = current_user.email
   end
 
   def show
