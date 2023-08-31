@@ -9,5 +9,7 @@
     <h3><%= @user_first_name %> <%= @user_last_name %></h3>
     <p><%= @user_email  %></p>
 
-    <%= link_to "Edit profile", edit_user_registration_path %>
+    <%= link_to "Edit profile", edit_user_registration_path, class: "secondary button" %>
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "secondary button"%>
+
   </section>

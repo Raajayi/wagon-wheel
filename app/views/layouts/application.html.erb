@@ -11,11 +11,14 @@
   </head>
 
   <body>
-  <section class="main">
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <section class="main">
+  <% unless current_page?(root_path) && !user_signed_in? || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+      <%= render "shared/navbar" %>
+    <% end %>
+      <%= yield %>
+    </section>
 
-    <%= yield %>
-  </section>
+  <%= render "shared/flashes" %>
+
   </body>
 </html>

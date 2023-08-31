@@ -45,6 +45,7 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .menu ul li a.results{background-image: url("icon-menu-results.svg"); background-repeat: no-repeat}
 .menu ul li a.statistics{background-image: url("icon-menu-statistics.svg"); background-repeat: no-repeat}
 .menu ul li a.profile{background-image: url("icon-menu-profile.svg"); background-repeat: no-repeat}
+.menu ul li a.logout{background-image: url("icon-menu-logout.svg"); background-repeat: no-repeat; position: fixed; bottom: 40px}
 
 .wrapper{padding: 0 30px}
 
@@ -158,6 +159,7 @@ background-repeat: no-repeat}
   .menu ul li a.results{background-image: url("icon-menu-results-dark.svg"); background-repeat: no-repeat}
   .menu ul li a.statistics{background-image: url("icon-menu-statistics-dark.svg"); background-repeat: no-repeat}
   .menu ul li a.profile{background-image: url("icon-menu-profile-dark.svg"); background-repeat: no-repeat}
+  .menu ul li:last-child{display: none}
 
   .questions .menu{display: none}
 
