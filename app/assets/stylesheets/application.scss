@@ -16,7 +16,7 @@
 .navbar{display: none !important}
 
 body{font: 14px/28px "Poppins", sans-serif; letter-spacing: 0.5px; background: #f7f7f7}
-img{max-width: 100%}
+img{max-width: 100%; height: 100%}
 
 h1{font:600 30px/38px "Poppins", sans-serif; margin-bottom: 20px}
 h2{font:600 22px/34px "Poppins", sans-serif}
@@ -39,7 +39,11 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .menu ul li a{color: #f7f7f7; text-decoration: none; padding: 10px 40px; display: block; opacity: 0.3; transition: 0.3s; background-position: 0 10px; background-size: 25px}
 .menu ul li a:hover{opacity: 1; transition: 0.3s}
 
-.menu ul li a.active{opacity: 1}
+body.index .menu ul li a.home{opacity: 1}
+body.leaderboard .menu ul li a.leaderboard{opacity: 1}
+body.results .menu ul li a.results{opacity: 1}
+body.statistics .menu ul li a.statistics{opacity: 1}
+body.profile .menu ul li a.profile, body.edit .menu ul li a.profile{opacity: 1}
 
 .menu ul li a.home{background-image: url("icon-menu-home.svg"); background-repeat: no-repeat}
 .menu ul li a.leaderboard{background-image: url("icon-menu-leaderboard.svg"); background-repeat: no-repeat}
@@ -72,6 +76,7 @@ a{text-decoration: none; color: #1B1C1E}
 .primary:hover{background: #39E11F; color: #fff; transition: 0.3s}
 
 .secondary{background: #232325; color: #fff; transition: 0.5s}
+.tertiary{border: 2px solid #232325; color: #232325; transition: 0.5s}
 /* .secondary:hover{background: #fff; color: #232325; transition: 0.5s} */
 
 .profile-head{position: absolute; width: 180px; height: 200px; right: 20px; top: -150px; background-size: 190px;
@@ -106,15 +111,22 @@ background-repeat: no-repeat}
 .landing .wheel{animation: rotation 12s infinite linear; position: fixed; left: 0; right: 0; margin: 125px auto 0}
 .landing .pin{position: absolute; left: 0; right: 0; margin: 75px auto; z-index: 1}
 
-.sessions-template, .registrations-template, .passwords-template{max-width: 350px; margin: 100px auto 0}
+.pages-template .content, .registrations-template .content{padding: 30px}
+
+// .sessions-template, .registrations-template, .passwords-template{max-width: 350px; margin: 100px auto 0}
 .sessions-template .form-inputs, .registrations-template .form-inputs, .passwords-template .form-inputs{margin: 40px 0 0}
 .sessions-template label, .registrations-template label, .passwords-template label{font-size: 16px}
 .sessions-template .form-control, .registrations-template .form-control, .passwords-template .form-control{background: #fff; border: 0; padding: 18px; border-radius: 8px}
 .sessions-template .form-control:focus, .registrations-template .form-control:focus, .passwords-template .form-control:focus{box-shadow: none}
-.sessions-template .btn, .registrations-template .btn, .passwords-template .btn{text-decoration: none; font: 500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 40px; border-radius: 6px; display: inline-block; background: #232325; color: #fff; transition: 0.5s; margin: 0 0 40px}
-.sessions-template a, .registrations-template a, .passwords-template a{display: block}
+.sessions-template .btn, .registrations-template .btn, .passwords-template .btn{text-decoration: none; font: 500 14px/60px "Poppins", sans-serif; height: 60px; padding: 0 40px; border-radius: 6px; display: inline-block; background: #232325; color: #fff; transition: 0.5s; margin: 0 0 20px}
+// .sessions-template a, .registrations-template a, .passwords-template a{display: block}
 
 .form-text{position: absolute; display: none}
+
+.pages-template .profile-photo{max-width: 120px; background: #D1E9FF; border-radius: 100px; margin: 0 0 40px}
+.pages-template .user-details{margin-bottom: 40px}
+.pages-template .actions{position: absolute; bottom: 30px}
+
 
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}
@@ -179,5 +191,9 @@ background-repeat: no-repeat}
 
   .landing .wheel{margin: 225px auto 0; animation: rotation 8s infinite linear}
   .landing .pin{margin: 200px auto 0; max-width: 50px}
+
+  .pages-template .content, .registrations-template .content{padding: 20px}
+  .pages-template .actions{position: relative; bottom: 0}
+
 
 }

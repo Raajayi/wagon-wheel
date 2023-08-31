@@ -10,9 +10,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="<%= controller.controller_name %>-template">
-
-      <% unless current_page?(root_path) && !user_signed_in? || current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_password_path)%>
+  <body class="<%= controller.controller_name %>-template <%= params[:action] %>">
+      <% unless current_page?(root_path) && !user_signed_in? || current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
         <section class="main">
         <%= render "shared/navbar" %>
       <% end %>
