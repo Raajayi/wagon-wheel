@@ -6,7 +6,7 @@
 <%# debugger %>
 
 
-<% @users.each do |user|%>
+<% @users.each_with_index do |user, index|%>
   <div class="card">
     <div>
       <% if user.photo.attached? %>
@@ -25,7 +25,7 @@
     </div>
     <div class="card-body">
       <h3>Points: <%= user.current_total_score %></h3>
-      <h3>Ranking: YY</h3>
+      <h3>Ranking: <%= index + 1 %></h3>
     </div>
 
   </div>
