@@ -1,10 +1,13 @@
-<% if current_user.photo.attached? %>
-  <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
-<% else %>
-  <%= image_tag "https://res.cloudinary.com/di3nglsxk/image/upload/v1693369410/dceh7obwsrrgflafx9uc.png", height: 300, width: 400 %>
-<% end %>
 
-<h3><%= @user_first_name %> <%= @user_last_name %></h3>
-<p><%= @user_email  %></p>
+  <section class="content">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag @current_user.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "https://res.cloudinary.com/di3nglsxk/image/upload/v1693369410/dceh7obwsrrgflafx9uc.png", height: 300, width: 400 %>
+    <% end %>
 
-<%= link_to "Edit profile", edit_user_registration_path %>
+    <h3><%= @user_first_name %> <%= @user_last_name %></h3>
+    <p><%= @user_email  %></p>
+
+    <%= link_to "Edit profile", edit_user_registration_path %>
+  </section>

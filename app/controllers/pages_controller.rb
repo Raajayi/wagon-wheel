@@ -13,4 +13,13 @@ class PagesController < ApplicationController
     @user_last_name = current_user.last_name
     @user_email = current_user.email
   end
+
+  def leaderboard
+  end
+
+  def results
+  end
+
+  def statistics
+  end
 end

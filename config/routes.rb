@@ -20,6 +20,15 @@ Rails.application.routes.draw do
   resources :pages, only: [:index]
   get '/profile', to: 'pages#profile', as: 'profile'
 
+  resources :pages, only: [:index]
+  get '/leaderboard', to: 'pages#leaderboard', as: 'leaderboard'
+
+  resources :pages, only: [:index]
+  get '/results', to: 'pages#results', as: 'results'
+
+  resources :pages, only: [:index]
+  get '/statistics', to: 'pages#statistics', as: 'statistics'
+
   resources :questions, only: [:show]
   resources :answers, only: [:show]
   resources :responses, only: [:create]
