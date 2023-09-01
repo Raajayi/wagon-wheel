@@ -1,24 +1,27 @@
-<div class="container">
   <h1>Leaderboard</h1>
   <p><%= @games_count[:all] %> games total | <%= @games_count[:started] %> games started | <%= @games_count[:completed] %> games completed </p>
+
+<section class="leadertable">
   <% @users.each_with_index do |user, index|%>
-    <div class="card">
-      <div class="row">
-        <div class="col-3">
-          <h3><strong>IMAGE PLACEHOLDER</strong></h3>
-        </div>
-        <div class="col-6 d-flex align-items-center justify-content-center vstack">
-          <div class="card-title p-3">
-            <h2><%= user.first_name %> <%= user.last_name %> <strong><%= user == current_user ? 'YOU' : '' %></strong>  </h2>
-          </div>
-          <div class="card-body">
-            <h3>Points: <%= user.current_total_score %></h3>
-          </div>
-        </div>
-        <div class="col-3">
-          <h3>Ranking: <%= index + 1 %></h3>
-        </div>
-      </div>
-    </div>
+
+    <section class="player">
+      <section class="player-avatar">
+
+        <% if current_user.full_body.attached? %>
+          <%= cl_image_tag @current_user.full_body.key %>
+        <% else %>
+          <%= image_tag "profile-head-default.png" %>
+        <% end %>
+
+      </section>
+      <section class="player-details">
+        <section class="player-name"><h4><%= user.first_name %> <%= user.last_name %> <%= user == current_user ? '<span>YOU</span>'.html_safe : '' %></h4></section>
+        <section class="player-points"><%= user.current_total_score %> Points</section>
+      </section>
+      <section class="player-total">
+        <%= index + 1 %>
+      </section>
+    </section>
+
   <% end %>
-</div>
+</section>

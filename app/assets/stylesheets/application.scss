@@ -128,6 +128,36 @@ background-repeat: no-repeat}
 
 .game-score{font-size: 130px; font-weight: 600; background: #1B1C1E; height: 300px; width: 300px; margin: 80px auto; text-align: center; line-height: 300px; border-radius: 300px; color: #f7f7f7}
 
+.leadertable{margin: 60px 0}
+.leadertable .player{position: relative; display: flex; justify-content: space-between; background: #fff; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05); border-radius: 12px; padding: 15px 15px 0 0; margin-bottom: 20px; align-items: center; min-height: 100px}
+.leadertable .player p{margin: 0}
+.leadertable .player .player-avatar{max-width: 150px; margin: -40px 0 0}
+.leadertable .player .player-total {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 56px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 60px;
+  border: 2px solid #1B1C1E;
+  margin: -15px 0 0;
+position: absolute;
+right: 15px
+}
+.leadertable .player .player-details{margin: -10px 0 0; width: 90%}
+.leadertable .player .player-points{margin: -10px 0 0}
+
+.leadertable .player .player-name span {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid;
+  top: -3px;
+  position: relative;
+  margin: 0 5px;
+}
+
 
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}
