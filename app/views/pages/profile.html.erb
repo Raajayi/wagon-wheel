@@ -1,19 +1,23 @@
     <section class="profile-photo">
-    <% if current_user.headshot.attached? %>
-      <%= cl_image_tag @current_user.headshot.key, height: 400, width: 400, crop: :fill %>
-    <% else %>
-      <%= image_tag "user.jpeg", height: 300, width: 400 %>
-    <% end %>
-
     <% if current_user.full_body.attached? %>
-      <%= cl_image_tag @current_user.full_body.key, height: 400, width: 400, crop: :fill %>
+      <%= cl_image_tag @current_user.full_body.key, class: "profile-body-default" %>
     <% else %>
-      <%= image_tag "user_full_body.jpeg", height: 300, width: 400 %>
+      <%= image_tag "profile-body-default.png", class: "profile-body-default" %>
     <% end %>
     </section>
     <section class="user-details">
-    <h3><%= @user_first_name %> <%= @user_last_name %></h3>
-    <p><%= @user_email  %></p>
+
+      <% if current_user.headshot.attached? %>
+        <%= cl_image_tag @current_user.headshot.key, class: "profile-head-default" %>
+      <% else %>
+        <%= image_tag "profile-head-default.png", class: "profile-head-default" %>
+      <% end %>
+
+      <div>
+        <h3><%= @user_first_name %> <%= @user_last_name %></h3>
+        <p><%= @user_email  %></p>
+      </div>
+
     </section>
 
     <section class="actions">
