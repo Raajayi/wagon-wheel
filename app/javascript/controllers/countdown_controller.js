@@ -12,9 +12,9 @@ export default class extends Controller {
 
 
   connect() {
-    console.log("Controller is live", this.element);
-    console.log("I am the submit button target", this.submitTarget);
-    console.log("I am the content target", this.contentTarget);
+    // console.log("Controller is live", this.element);
+    // console.log("I am the submit button target", this.submitTarget);
+    // console.log("I am the content target", this.contentTarget);
 
     // this.secondsValue = 29
     // console.log(this.secondsValue);
@@ -36,17 +36,26 @@ export default class extends Controller {
       this.secondsValue -= 1;
       // console.log(this.secondsValue);
       this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+
+      if (this.secondsValue <= 0) {
+        this.submitTarget.click();
+      }
     }, 1000);
+
+    // if (this.secondsValue <= 0) {
+    //   clearInterval()
+    // }
+    // setInterval(this.updateTimer, 1000);
     // if (this.secondsValue  <= 0) {
     //   console.log("Countdown is over");
     // }
   }
 
-  updateTimer() {
-    this.secondsValue -= 1;
-    // console.log(this.secondsValue);
-    this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
-  }
+  // updateTimer() {
+  //   // this.secondsValue -= 1;
+  //   console.log(this.secondsValue);
+  //   // this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+  // }
 
 
 
