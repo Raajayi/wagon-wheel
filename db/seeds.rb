@@ -19,10 +19,10 @@ User.destroy_all
 
 puts "Started seeding"
 
-user1 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123123")
-user2 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123123")
-user3 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123123")
-user4 = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: "123123")
+user1 = User.create!(first_name: 'Christina', last_name: 'Sugiono', email: 'christina@gmail.com', password: "123123")
+user2 = User.create!(first_name: 'Michele', last_name: 'Comolli', email: 'michele@gmail.com', password: "123123")
+user3 = User.create!(first_name: 'Christian', last_name: 'Morris', email: 'christian@gmail.com', password: "123123")
+user4 = User.create!(first_name: 'Kimberly', last_name: 'Wong', email: 'kim@gmail.com', password: "123123")
 user5 = User.create!(first_name: 'Indy', last_name: 'Mandira', email: 'indy@gmail.com', password: "123123")
 user6 = User.create!(first_name: 'Phillip', last_name: 'Peet', email: 'phillip@gmail.com', password: "123123")
 user7 = User.create!(first_name: 'Ademide', last_name: 'Ajayi', email: 'ademide@gmail.com', password: "123123")
