@@ -14,7 +14,7 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 4
+    this.secondsValue = 15
     this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
 
     setInterval(() => {
