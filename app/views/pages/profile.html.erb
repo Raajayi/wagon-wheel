@@ -1,9 +1,14 @@
     <section class="profile-photo">
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag @current_user.photo.key, height: 400, width: 400, crop: :fill %>
-      <%= cl_image_tag @current_user.photo.key, height: 400, width: 400, crop: :fill %>
+    <% if current_user.headshot.attached? %>
+      <%= cl_image_tag @current_user.headshot.key, height: 400, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "https://res.cloudinary.com/di3nglsxk/image/upload/v1693369410/dceh7obwsrrgflafx9uc.png", height: 300, width: 400 %>
+      <%= image_tag "user.jpeg", height: 300, width: 400 %>
+    <% end %>
+
+    <% if current_user.full_body.attached? %>
+      <%= cl_image_tag @current_user.full_body.key, height: 400, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "user_full_body.jpeg", height: 300, width: 400 %>
     <% end %>
     </section>
     <section class="user-details">
