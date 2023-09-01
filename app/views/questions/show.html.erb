@@ -10,17 +10,21 @@
       <section class="question">
         <p><%= @question.content %></p>
       </section>
+      <div class="countdown-wrapper" data-controller="countdown">
+        <%= simple_form_for(@response) do |f| %>
 
-      <%= simple_form_for(@response) do |f| %>
+          <div class="form-inputs">
+            <%= f.collection_radio_buttons :answer_id, @question.answers, :id, :content %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, value: "Submit answer", class: "primary button", data: { countdown_target: "submit"} %>
+          </div>
 
-        <div class="form-inputs">
-          <%= f.collection_radio_buttons :answer_id, @question.answers, :id, :content %>
+        <% end %>
+        <div class="countdown-content" data-countdown-target="content">
         </div>
-        <div class="form-actions">
-          <%= f.button :submit, value: "Submit answer", class: "primary button" %>
-        </div>
+      </div>
 
-      <% end %>
     </section>
 
   </section>
