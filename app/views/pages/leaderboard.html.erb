@@ -4,19 +4,19 @@
 <section class="leadertable">
   <% @users.each_with_index do |user, index|%>
 
-    <section class="player">
+    <section class="player <%= user == current_user ? 'current'.html_safe : '' %>">
       <section class="player-avatar">
 
-        <% if current_user.full_body.attached? %>
-          <%= cl_image_tag @current_user.full_body.key %>
+        <% if user.full_body.attached? %>
+          <%= cl_image_tag user.full_body.key %>
         <% else %>
-          <%= image_tag "profile-head-default.png" %>
+          <%= image_tag "profile-body-default.png" %>
         <% end %>
 
       </section>
       <section class="player-details">
         <section class="player-name"><h4><%= user.first_name %> <%= user.last_name %> <%= user == current_user ? '<span>YOU</span>'.html_safe : '' %></h4></section>
-        <section class="player-points"><%= user.current_total_score %> Points</section>
+        <section class="player-points"><%= user.current_total_score %> points</section>
       </section>
       <section class="player-total">
         <%= index + 1 %>
