@@ -163,14 +163,26 @@ background-repeat: no-repeat}
 
 
 .users{display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; text-align: center; max-width: 700px}
-.users .user{max-width: 120px; margin: 20px 0}
+.users .user{max-width: 120px; margin: 20px 0; opacity: 0.3; transition: 0.5s ease; position: relative}
 .users .user img{background: #D1E9FF; border-radius: 120px}
 
+.users .user .tick{position: absolute; right: 0; bottom: 30px; border: 2px solid #f7f7f7; opacity: 0; transition: 0.5s ease}
+
+.users .user.connected{opacity: 1; transition: 0.5s ease}
+// .users .user.connected img{background: #29BF12}
+
+.users .user.connected .tick{opacity: 1; transition: 0.5s ease}
+
+
 .users.connecting{position: relative}
-.users.connecting .user{max-width: 42px; border: 2px solid #fff; border-radius: 50px}
-.users.connecting .user:nth-of-type(2){left: 30px; position: absolute}
-.users.connecting .user:nth-of-type(3){left: 60px; position: absolute}
-.users.connecting .user:nth-of-type(4){left: 90px; position: absolute}
+.users.connecting .user{max-width: 37px; opacity: 1; position: absolute}
+
+.users.connecting .user:nth-of-type(1){left: 0}
+.users.connecting .user:nth-of-type(2){left: 20px}
+.users.connecting .user:nth-of-type(3){left: 40px}
+.users.connecting .user:nth-of-type(4){left: 60px}
+
+.users.connecting .user img{background: #D1E9FF; border-radius: 37px; border: 2px solid #fff}
 
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}
