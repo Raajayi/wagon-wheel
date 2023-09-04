@@ -4,7 +4,6 @@ class Question < ApplicationRecord
   has_many :responses
 
   def correct_answer
-    answers.first
     answers.select {|answer| answer.correct == true}
   end
 end

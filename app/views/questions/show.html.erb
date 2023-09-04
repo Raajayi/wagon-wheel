@@ -10,7 +10,7 @@
       <section class="question">
         <p><%= @question.content %></p>
       </section>
-      <div class="countdown-wrapper" data-controller="countdown">
+      <div class="countdown-wrapper" data-controller="countdown", data-countdown-correct-answer-id-value=<%= @correct_answer_id %>>
         <%= simple_form_for @response, data: {countdown_target: "form", action: "countdown#onSubmit"} do |f| %>
 
           <div class="form-inputs">

@@ -5,12 +5,26 @@ export default class extends Controller {
   static targets = ['submit','content', 'form']
 
   static values = {
-    seconds: Number
+    seconds: Number,
+    correctAnswerId: String
   }
 
   connect() {
     console.log("Connected");
+    console.log("Correct answer id", this.correctAnswerIdValue);
     this.countdown();
+
+    const correctInputId = `response_answer_id_${this.correctAnswerIdValue}`
+    console.log(correctInputId);
+    console.log(document.getElementById(correctInputId));
+    const correctAnswerElement = document.getElementById(correctInputId)
+    console.dir(correctAnswerElement);
+    console.log(correctAnswerElement.labels[0]);
+    const correctLabelElement = correctAnswerElement.labels[0]
+    correctLabelElement.innerHTML = "LGTM!!!"
+    correctLabelElement.classList.add('bg-success')
+    correctAnswerElement.value = "DGWREFWR"
+
   }
 
   countdown() {
