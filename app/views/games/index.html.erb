@@ -84,18 +84,16 @@
                 <h5><%= game.title %></h5>
 
                 <section class="users connecting">
-                  <section class="user">
-                    <%= image_tag "profile-body-default.png", class: "profile-body-default" %>
-                  </section>
-                  <section class="user">
-                    <%= image_tag "profile-body-default.png", class: "profile-body-default" %>
-                  </section>
-                  <section class="user">
-                    <%= image_tag "profile-body-default.png", class: "profile-body-default" %>
-                  </section>
-                  <section class="user">
-                    <%= image_tag "profile-body-default.png", class: "profile-body-default" %>
-                  </section>
+
+                  <% game.users.each do |user| %>
+                    <section class="user">
+                      <% if user.headshot.attached? %>
+                        <%= cl_image_tag user.headshot.key, class: "profile-head-default" %>
+                      <% else %>
+                        <%= image_tag "profile-head-default.png",class: "profile-head-default" %>
+                      <% end %>
+                    </section>
+                  <% end %>
                 </section>
 
                 <span>Continue game</span>
@@ -120,6 +118,20 @@
                 <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
+
+                <section class="users connecting">
+
+                <% game.users.each do |user| %>
+                    <section class="user">
+                      <% if user.headshot.attached? %>
+                        <%= cl_image_tag user.headshot.key, class: "profile-head-default" %>
+                      <% else %>
+                        <%= image_tag "profile-head-default.png",class: "profile-head-default" %>
+                      <% end %>
+                    </section>
+                  <% end %>
+                </section>
+
                 <span>Play again</span>
               </a>
           </section>
