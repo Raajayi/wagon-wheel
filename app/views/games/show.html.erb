@@ -1,25 +1,27 @@
 
+<div data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
     <h3>Hang Tight!</h3>
 
     <p>Your friends are connecting in. The game will commence shortly.</p>
     <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> %> -->
 
     <section class="users">
-    <% @users.each do |user|%>
-      <section class="user">
-        <% if user.headshot.attached? %>
-            <%= cl_image_tag user.headshot.key, class: "profile-head-default" %>
-        <% else %>
-          <%= link_to edit_user_registration_path do %>
-            <%= image_tag "profile-head-default.png", class: "profile-head-default" %>
+      <% @users.each do |user| %>
+        <section class="user">
+          <% if user.headshot.attached? %>
+            <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
+          <% else %>
+            <%= link_to edit_user_registration_path do %>
+              <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
+            <% end %>
           <% end %>
-        <% end %>
-        <span><%= user.first_name %></span>
-      </section>
-    <% end %>
-    </section>
+          <span><%= user.first_name %></span>
+        </section>
+      <% end %>
+  </section>
 
 
     <section class="actions">
       <%= link_to "Play game", question_url(@game.questions.find_by(order: 1)), class: "primary button" %>
     </section>
+</div>
