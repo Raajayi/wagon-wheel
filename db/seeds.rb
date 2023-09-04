@@ -106,130 +106,130 @@ html_3_d = Answer.create!(content: "XML, JSON, SQL", correct: false, question: h
 puts "Seeding responses"
 puts "User 1's response"
 
-response = Response.new(answer: ruby_1_a, user: user1)
+response = Response.new(answer: ruby_1_a, question: ruby_1_a.question, user: user1)
 response.eval_score
 response.save!
 
-response = Response.new(answer: ruby_2_c, user: user1)
+response = Response.new(answer: ruby_2_c, question: ruby_2_c.question, user: user1)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_3_b, user: user1)
-response.eval_score
-response.save!
-
-response = Response.new(answer: oop_1_b, user: user1)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_2_a, user: user1)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_3_c, user: user1)
+response = Response.new(answer: ruby_3_b, question: ruby_3_b.question, user: user1)
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_d, user: user1)
+response = Response.new(answer: oop_1_b, question: oop_1_b.question, user: user1)
 response.eval_score
 response.save!
-response = Response.new(answer: html_2_a, user: user1)
+response = Response.new(answer: oop_2_a, question: oop_2_a.question, user: user1)
 response.eval_score
 response.save!
-response = Response.new(answer: html_3_b, user: user1)
+response = Response.new(answer: oop_3_c, question: oop_3_c.question, user: user1)
+response.eval_score
+response.save!
+
+response = Response.new(answer: html_1_d, question: html_1_d.question, user: user1)
+response.eval_score
+response.save!
+response = Response.new(answer: html_2_a, question: html_2_a.question, user: user1)
+response.eval_score
+response.save!
+response = Response.new(answer: html_3_b, question: html_3_b.question, user: user1)
 response.eval_score
 response.save!
 
 puts "User 2's response"
 
-response = Response.new(answer: ruby_1_d, user: user2)
+response = Response.new(answer: ruby_1_d, question: ruby_1_d.question, user: user2)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_2_a, user: user2)
+response = Response.new(answer: ruby_2_a, question: ruby_2_a.question, user: user2)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_3_c, user: user2)
-response.eval_score
-response.save!
-
-response = Response.new(answer: oop_1_a, user: user2)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_2_a, user: user2)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_3_b, user: user2)
+response = Response.new(answer: ruby_3_c, question: ruby_3_c.question, user: user2)
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_c, user: user2)
+response = Response.new(answer: oop_1_a, question: oop_1_a.question, user: user2)
 response.eval_score
 response.save!
-response = Response.new(answer: html_2_b, user: user2)
+response = Response.new(answer: oop_2_a, question: oop_2_a.question, user: user2)
 response.eval_score
 response.save!
-response = Response.new(answer: html_3_a, user: user2)
+response = Response.new(answer: oop_3_b, question: oop_3_b.question, user: user2)
+response.eval_score
+response.save!
+
+response = Response.new(answer: html_1_c, question: html_1_c.question, user: user2)
+response.eval_score
+response.save!
+response = Response.new(answer: html_2_b, question: html_2_b.question, user: user2)
+response.eval_score
+response.save!
+response = Response.new(answer: html_3_a, question: html_3_a.question, user: user2)
 response.eval_score
 response.save!
 
 puts "User 3's responses"
 
-response = Response.new(answer: ruby_1_c, user: user3)
+response = Response.new(answer: ruby_1_c, question: ruby_1_c.question, user: user3)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_2_a, user: user3)
+response = Response.new(answer: ruby_2_a, question: ruby_2_a.question, user: user3)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_3_d, user: user3)
-response.eval_score
-response.save!
-
-response = Response.new(answer: oop_1_d, user: user3)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_2_c, user: user3)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_3_a, user: user3)
+response = Response.new(answer: ruby_3_d, question: ruby_3_d.question, user: user3)
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_c, user: user3)
+response = Response.new(answer: oop_1_d, question: oop_1_d.question, user: user3)
 response.eval_score
 response.save!
-response = Response.new(answer: html_2_d, user: user3)
+response = Response.new(answer: oop_2_c, question: oop_2_c.question, user: user3)
 response.eval_score
 response.save!
-response = Response.new(answer: html_3_b, user: user3)
+response = Response.new(answer: oop_3_a, question: oop_3_a.question, user: user3)
+response.eval_score
+response.save!
+
+response = Response.new(answer: html_1_c, question: html_1_c.question, user: user3)
+response.eval_score
+response.save!
+response = Response.new(answer: html_2_d, question: html_2_d.question, user: user3)
+response.eval_score
+response.save!
+response = Response.new(answer: html_3_b, question: html_3_b.question, user: user3)
 response.eval_score
 response.save!
 
 puts "User 4's responses"
 
-response = Response.new(answer: ruby_1_b, user: user4)
+response = Response.new(answer: ruby_1_b, question: ruby_1_b.question, user: user4)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_2_a, user: user4)
+response = Response.new(answer: ruby_2_a, question: ruby_2_a.question, user: user4)
 response.eval_score
 response.save!
-response = Response.new(answer: ruby_3_d, user: user4)
-response.eval_score
-response.save!
-
-response = Response.new(answer: oop_1_c, user: user4)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_2_d, user: user4)
-response.eval_score
-response.save!
-response = Response.new(answer: oop_3_c, user: user4)
+response = Response.new(answer: ruby_3_d, question: ruby_3_d.question, user: user4)
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_a, user: user4)
+response = Response.new(answer: oop_1_c, question: oop_1_c.question, user: user4)
 response.eval_score
 response.save!
-response = Response.new(answer: html_2_b, user: user4)
+response = Response.new(answer: oop_2_d, question: oop_2_d.question, user: user4)
 response.eval_score
 response.save!
-response = Response.new(answer: html_3_c, user: user4)
+response = Response.new(answer: oop_3_c, question: oop_3_c.question, user: user4)
+response.eval_score
+response.save!
+
+response = Response.new(answer: html_1_a, question: html_1_a.question, user: user4)
+response.eval_score
+response.save!
+response = Response.new(answer: html_2_b, question: html_2_b.question, user: user4)
+response.eval_score
+response.save!
+response = Response.new(answer: html_3_c, question: html_3_c.question, user: user4)
 response.eval_score
 response.save!
 

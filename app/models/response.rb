@@ -1,9 +1,10 @@
 class Response < ApplicationRecord
-  belongs_to :answer
+  belongs_to :answer, optional: true
   belongs_to :user
+  belongs_to :question
 
   def correct?
-    answer.correct
+    answer.nil? ? false : answer.correct
   end
 
   def eval_score
