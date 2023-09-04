@@ -15,7 +15,7 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 10
+    this.secondsValue = 5
     this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
 
     const preSelectionInterval = setInterval(() => {
@@ -40,7 +40,7 @@ export default class extends Controller {
     this.formTarget[4].disabled = true;
     this.formTarget[5].disabled = true;
 
-    this.secondsValue = 5;
+    this.secondsValue = 2;
     this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
 
     const postSelectionInterval = setInterval(() => {
@@ -48,7 +48,12 @@ export default class extends Controller {
       this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
       if (this.secondsValue <= 0) {
         clearInterval(postSelectionInterval)
-        this.submitTarget.click();
+        console.dir(this.formTarget);
+        const formData = new FormData(this.formTarget);
+        console.dir(formData);
+        // this.submitTargt.click();
+
+        this.formTarget.submit()
       }
     }, 1000);
   }

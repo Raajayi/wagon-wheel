@@ -2,12 +2,11 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
     @response.user = current_user
-    # @response.question = 
     @response.eval_score
 
     # if @response == @response.answer
 
-
+    raise
     if @response.save
       current_question = @response.question.order
       next_question = @response.question.game.questions.find_by(order: current_question + 1)
