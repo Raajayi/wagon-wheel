@@ -24,8 +24,16 @@ class GamesController < ApplicationController
   end
 
   def show
-    @users = User
     @game = Game.find(params[:id])
+    @game_session = GameSession.create(game: @game, user: current_user) if GameSession.find_by(game: @game, user: current_user).nil?
+    @users = User.all
+    GameChannel.broadcast_to(
+      @game,
+      {
+        userId: current_user.id,
+        name: current_user.first_name
+      }
+    )
   end
 
   def score
