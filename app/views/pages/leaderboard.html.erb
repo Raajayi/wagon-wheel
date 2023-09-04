@@ -10,7 +10,10 @@
         <% if user.full_body.attached? %>
           <%= cl_image_tag user.full_body.key %>
         <% else %>
-          <%= image_tag "profile-body-default.png" %>
+
+          <%= link_to profile_path do %>
+            <%= image_tag "profile-body-default.png" %>
+          <% end %>
         <% end %>
 
       </section>

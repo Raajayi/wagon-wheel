@@ -24,7 +24,7 @@ class GamesController < ApplicationController
   end
 
   def show
-    @users = User
+    @users = User.all
     @game = Game.find(params[:id])
   end
 

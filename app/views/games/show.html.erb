@@ -2,15 +2,23 @@
     <h3>Hang Tight!</h3>
 
     <p>Your friends are connecting in. The game will commence shortly.</p>
-    <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> -->
+    <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> %> -->
 
+    <section class="users">
     <% @users.each do |user|%>
-      <% if user.headshot.attached? %>
-          <%= cl_image_tag @user.headshot.key, class: "profile-head-default" %>
-      <% else %>
-        <%= image_tag "profile-head-default.png", class: "profile-head-default" %>
-      <% end %>
+      <section class="user">
+        <% if user.headshot.attached? %>
+            <%= cl_image_tag user.headshot.key, class: "profile-head-default" %>
+        <% else %>
+          <%= link_to profile_path do %>
+            <%= image_tag "profile-head-default.png", class: "profile-head-default" %>
+          <% end %>
+        <% end %>
+        <span><%= user.first_name %></span>
+      </section>
     <% end %>
+    </section>
+
 
     <section class="actions">
       <%= link_to "Play game", question_url(@game.questions.find_by(order: 1)), class: "primary button" %>
