@@ -15,7 +15,7 @@
 
       </section>
       <section class="player-details">
-        <section class="player-name"><h4><%= user.first_name %> <%= user.last_name %> <%= user == current_user ? '<span>YOU</span>'.html_safe : '' %></h4></section>
+        <section class="player-name"><h4><%= user.first_name %> <%= user == current_user ? '<span>YOU</span>'.html_safe : '' %></h4></section>
         <section class="player-points"><%= user.current_total_score %> points</section>
       </section>
       <section class="player-total">

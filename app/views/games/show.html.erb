@@ -1,6 +1,17 @@
 
-    <h3>Commence Game</h3>
-    <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p>
+    <h3>Hang Tight!</h3>
+
+    <p>Your friends are connecting in. The game will commence shortly.</p>
+    <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> -->
+
+    <% @users.each do |user|%>
+      <% if user.headshot.attached? %>
+          <%= cl_image_tag @user.headshot.key, class: "profile-head-default" %>
+      <% else %>
+        <%= image_tag "profile-head-default.png", class: "profile-head-default" %>
+      <% end %>
+    <% end %>
+
     <section class="actions">
       <%= link_to "Play game", question_url(@game.questions.find_by(order: 1)), class: "primary button" %>
     </section>
