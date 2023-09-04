@@ -10,7 +10,7 @@
         <% if user.headshot.attached? %>
             <%= cl_image_tag user.headshot.key, class: "profile-head-default" %>
         <% else %>
-          <%= link_to profile_path do %>
+          <%= link_to edit_user_registration_path do %>
             <%= image_tag "profile-head-default.png", class: "profile-head-default" %>
           <% end %>
         <% end %>

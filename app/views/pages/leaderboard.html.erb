@@ -11,7 +11,7 @@
           <%= cl_image_tag user.full_body.key %>
         <% else %>
 
-          <%= link_to profile_path do %>
+          <%= link_to edit_user_registration_path do %>
             <%= image_tag "profile-body-default.png" %>
           <% end %>
         <% end %>
