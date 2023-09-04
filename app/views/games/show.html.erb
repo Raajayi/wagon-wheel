@@ -1,6 +1,9 @@
+
 <div data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
-    <h3>Commence Game</h3>
-    <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p>
+    <h3>Hang Tight!</h3>
+
+    <p>Your friends are connecting in. The game will commence shortly.</p>
+    <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> -->
 
     <ul>
       <% @users.each do |user| %>

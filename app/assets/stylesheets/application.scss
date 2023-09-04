@@ -31,13 +31,17 @@ h4:before{content:""; display: block; height: 30px; width: 4px; position: absolu
 .oop h4:before{background: #BB05FB}
 .fewd h4:before{background: #0194FF}
 
-.main{display: grid; grid-template-columns: 1fr 4fr; min-height: 100vh}
+.main{display: grid; grid-template-columns: 1.5fr 4fr; min-height: 100vh}
 .content{overflow: hidden}
 
 .menu{background: #1B1C1E}
 .menu ul{position: sticky; list-style: none; margin: 0; padding: 0 30px; top: 50px}
 .menu ul li a{color: #f7f7f7; text-decoration: none; padding: 10px 40px; display: block; opacity: 0.3; transition: 0.3s; background-position: 0 10px; background-size: 25px}
 .menu ul li a:hover{opacity: 1; transition: 0.3s}
+
+.logo-desktop{padding: 60px 25px}
+.logo-wheel{animation: rotation 20s infinite linear; max-width: 40px}
+.logo-title{max-width: 200px; margin: 0 5px; width: 70%}
 
 body.index .menu ul li a.home{opacity: 1}
 body.leaderboard .menu ul li a.leaderboard{opacity: 1}
@@ -109,7 +113,7 @@ background-repeat: no-repeat}
 .landing .wheel{animation: rotation 12s infinite linear; position: fixed; left: 0; right: 0; margin: 125px auto 0}
 .landing .pin{position: absolute; left: 0; right: 0; margin: 75px auto; z-index: 1}
 
-.pages-template .content, .registrations-template .content, .games-template .content{padding: 30px}
+.pages-template .content, .registrations-template .content, .games-template .content{padding: 60px 30px 30px}
 
 .sessions-template.new, .registrations-template.new, .passwords-template.new{max-width: 450px; margin: 60px auto 0}
 .sessions-template .form-inputs, .registrations-template .form-inputs, .passwords-template .form-inputs{margin: 40px 0 0}
@@ -134,7 +138,7 @@ background-repeat: no-repeat}
 
 .leadertable{margin: 60px 0}
 .leadertable .player{position: relative; display: flex; justify-content: space-between; background: #fff; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05); border-radius: 12px; padding: 15px 15px 0 0; margin-bottom: 20px; align-items: center; min-height: 100px}
-.leadertable .player .player-avatar{max-width: 150px; margin: -40px 0 0}
+.leadertable .player .player-avatar{max-width: 150px; margin: -35px 0 0}
 .leadertable .player .player-total{height: 60px; width: 60px; text-align: center; line-height: 56px; font-size: 22px; font-weight: bold; border-radius: 60px; border: 2px solid #1B1C1E; margin: -15px 0 0; position: absolute; right: 15px}
 .leadertable .player .player-details{margin: -10px 0 0; width: 90%}
 .leadertable .player .player-points{margin: -10px 0 0}
@@ -190,6 +194,8 @@ background-repeat: no-repeat}
   .questions .wrapper{padding: 0 20px}
   .summary{padding: 80px 20px 20px; margin: 200px 0 50px}
 
+  .logo-desktop{display: none}
+
   .main{display: block; padding-bottom: 100px}
   .menu{position: fixed; bottom: 0; width: 100%; z-index: 1; background: #f7f7f7}
   .menu ul{display: flex; justify-content: space-around; padding: 0 10px}
@@ -203,7 +209,7 @@ background-repeat: no-repeat}
   .menu ul li a.profile{background-image: url("icon-menu-profile-dark.svg"); background-repeat: no-repeat}
   .menu ul li:last-child{display: none}
 
-  .questions .menu{display: none}
+  .questions-template .menu{display: none}
 
   .questions .question{margin: 20px 0}
   .questions .form-inputs input[type="radio"] + label{padding: 10px; min-height: 100px}
@@ -214,6 +220,8 @@ background-repeat: no-repeat}
   .pages-template .content, .registrations-template .content, .games-template .content{padding: 20px}
 
   .actions{position: relative; bottom: 0}
+
+  .leadertable .player .player-avatar{max-width: 120px}
 
 
 }

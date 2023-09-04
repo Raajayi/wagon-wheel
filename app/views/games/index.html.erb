@@ -1,5 +1,4 @@
 
-
     <section class="wrapper">
       <section class="summary">
 
@@ -16,19 +15,44 @@
           <li class="best-result"><span>Best result</span><strong>1st</strong></li>
           <li class="latest-result"><span>Latest result</span><strong>2nd</strong></li>
         </ul>
-        <a href="#" class="primary button">Join game</a><a href="#" class="secondary button">Leaderboard</a>
+        <a href="#" class="primary button">Join game</a><%= link_to "Leaderboard", leaderboard_path, class: "secondary button" %>
+
       </section>
     </section>
+
+<!--
+    <section class="wrapper">
+
+      <section class="title">
+        <h3>All games</h3>
+        <p><%= @games.count %> games</p>
+      </section>
+
+      <section class="games">
+        <% @games.each do |game| %>
+          <section class="game <%= game.topic.downcase %>">
+              <a href="games/<%= game.id %>">
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                <span>Play game</span>
+              </a>
+          </section>
+        <% end %>
+      </section>
+
+    </section>
+-->
 
     <section class="wrapper">
 
       <section class="title">
         <h3>Upcoming games</h3>
-        <p>6 games remaining</p>
+        <p><%= @games_remaining_count %> games remaining</p>
       </section>
 
       <section class="games">
-        <% @games.each do |game| %>
+        <% @games_remaining.each do |game| %>
           <section class="game <%= game.topic.downcase %>">
               <a href="games/<%= game.id %>">
                 <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
@@ -46,7 +70,7 @@
 
       <section class="title">
         <h3>Started games</h3>
-        <p>2 games started</p>
+        <p><%= @games_count[:started] %> games started</p>
       </section>
 
       <section class="games">
@@ -68,7 +92,7 @@
 
       <section class="title">
         <h3>Completed games</h3>
-        <p>4 games completed</p>
+        <p><%= @games_count[:completed] %> games completed</p>
       </section>
 
       <section class="games">
