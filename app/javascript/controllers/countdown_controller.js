@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="countdown"
 export default class extends Controller {
-  static targets = ['submit','content', 'form']
+  static targets = ['submit','content', 'form', 'radio']
 
   static values = {
     seconds: Number,
@@ -10,22 +10,7 @@ export default class extends Controller {
   }
 
   connect() {
-    // console.log("Connected");
-    // console.log("Correct answer id", this.correctAnswerIdValue);
     this.countdown();
-
-    // const correctInputId = `response_answer_id_${this.correctAnswerIdValue}`
-    // console.log(correctInputId);
-    // console.log(document.getElementById(correctInputId));
-    // const correctInputElement = document.getElementById(correctInputId)
-    // // console.dir(correctInputElement);
-    // // console.log(correctInputElement.labels[0]);
-    // const correctLabelElement = correctInputElement.labels[0]
-    // // correctLabelElement.innerHTML = "LGTM!!!"
-    // correctLabelElement.classList.add('bg-success')
-    // correctLabelElement.classList.add('correct')
-    // correctInputElement.value = "DGWREFWR"
-
   }
 
   countdown() {
@@ -37,7 +22,6 @@ export default class extends Controller {
       this.secondsValue -= 1;
       this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
       if (this.secondsValue <= 0) {
-        // this.submitTarget.click();
         clearInterval(preSelectionInterval)
         this.onTimerEnd()
       }
@@ -50,6 +34,11 @@ export default class extends Controller {
     const correctLabelElement = correctInputElement.labels[0]
     correctLabelElement.classList.add('bg-success')
     correctLabelElement.classList.add('correct')
+
+    this.formTarget[2].disabled = true;
+    this.formTarget[3].disabled = true;
+    this.formTarget[4].disabled = true;
+    this.formTarget[5].disabled = true;
 
     this.secondsValue = 5;
     this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
