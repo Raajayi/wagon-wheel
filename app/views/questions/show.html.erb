@@ -15,7 +15,6 @@
 
           <div class="form-inputs">
             <%= f.collection_radio_buttons :answer_id, @question.answers, :id, :content %>
-            <%# f.input :answer_id, collection: @question.answers, input_html: {data: { countdown_target: "radio"}} %>
           </div>
           <div class="form-inputs">
             <%= f.input :question_id, input_html: { value: @question.id }%>
