@@ -3,20 +3,23 @@
     <h3>Hang Tight!</h3>
 
     <p>Your friends are connecting in. The game will commence shortly.</p>
-    <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> -->
+    <!-- <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p> %> -->
 
-    <ul>
+    <section class="users">
       <% @users.each do |user| %>
-        <li> 
+        <section class="user">
           <% if user.headshot.attached? %>
             <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
           <% else %>
-            <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
+            <%= link_to edit_user_registration_path do %>
+              <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
+            <% end %>
           <% end %>
-          <%= user.first_name %>
-        </li>
+          <span><%= user.first_name %></span>
+        </section>
       <% end %>
-    </ul>
+  </section>
+
 
     <section class="actions">
       <%= link_to "Play game", question_url(@game.questions.find_by(order: 1)), class: "primary button" %>
