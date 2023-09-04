@@ -1,6 +1,21 @@
-
+<div data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
     <h3>Commence Game</h3>
     <p><strong><%= @game.topic %>:</strong> <%= @game.title %></p>
+
+    <ul>
+      <% @users.each do |user| %>
+        <li> 
+          <% if user.headshot.attached? %>
+            <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
+          <% else %>
+            <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{'bg-success' if @game.users.include? user}", width: 50 %>
+          <% end %>
+          <%= user.first_name %>
+        </li>
+      <% end %>
+    </ul>
+
     <section class="actions">
       <%= link_to "Play game", question_url(@game.questions.find_by(order: 1)), class: "primary button" %>
     </section>
+</div>
