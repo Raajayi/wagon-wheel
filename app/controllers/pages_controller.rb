@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
 
   def profile
-    # @user_first_name = current_user.first_name.nil? ? "Friend" : current_user.first_name
     @user_first_name = current_user.first_name
     @user_last_name = current_user.last_name
     @user_email = current_user.email
@@ -27,4 +26,5 @@ class PagesController < ApplicationController
 
   def statistics
   end
+
 end

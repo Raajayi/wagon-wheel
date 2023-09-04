@@ -1,5 +1,12 @@
 
+
     <section class="menu">
+      <section class="logo-desktop">
+        <%= link_to root_path do %>
+          <%= image_tag "logo-wheel.svg", class: "logo-wheel" %>
+          <%= image_tag "logo-title.svg", class: "logo-title" %>
+        <% end %>
+      </section>
       <ul>
         <li><%= link_to "Home", root_path, class: "home" %></li>
         <li><%= link_to "Leaderboard", leaderboard_path, class: "leaderboard" %></li>
