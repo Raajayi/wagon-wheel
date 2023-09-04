@@ -14,7 +14,7 @@ class Game < ApplicationRecord
     responses = user.responses.all
     unless responses.nil?
       games_responses = responses.map do |response|
-        response.answer.question.game
+        response.question.game
       end
       return games_responses.uniq
     end
@@ -23,7 +23,7 @@ class Game < ApplicationRecord
   def self.completed_games(user)
     responses = user.responses.all
     unless responses.nil?
-      questions_with_responses = responses.map { |response| response.answer.question }
+      questions_with_responses = responses.map { |response| response.question }
 
       games_completed = started_games(user).select do |game|
         game.questions.to_set.subset?(questions_with_responses.to_set)
