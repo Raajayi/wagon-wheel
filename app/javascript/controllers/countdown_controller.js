@@ -15,12 +15,12 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 5
-    this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+    this.secondsValue = 15
+    this.contentTarget.innerHTML = `<span class="count">${this.secondsValue}</span><span class="seconds">seconds</span>`;
 
     const preSelectionInterval = setInterval(() => {
       this.secondsValue -= 1;
-      this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+      this.contentTarget.innerHTML = `<span class="count">${this.secondsValue}</span><span class="seconds">seconds</span>`;
       if (this.secondsValue <= 0) {
         clearInterval(preSelectionInterval)
         this.onTimerEnd()
@@ -32,7 +32,7 @@ export default class extends Controller {
     const correctInputId = `response_answer_id_${this.correctAnswerIdValue}`
     const correctInputElement = document.getElementById(correctInputId)
     const correctLabelElement = correctInputElement.labels[0]
-    correctLabelElement.classList.add('bg-success')
+    // correctLabelElement.classList.add('bg-success')
     correctLabelElement.classList.add('correct')
 
     this.formTarget[2].disabled = true;

@@ -6,6 +6,8 @@ class GamesController < ApplicationController
     @games_started = Game.started_games(current_user)
     @games_completed = Game.completed_games(current_user)
 
+    @games_in_session = GameSession.where(user_id: current_user.id)
+
     @user_first_name = current_user.first_name
     @user_last_name = current_user.last_name
     @user_email = current_user.email
@@ -19,7 +21,7 @@ class GamesController < ApplicationController
     @games_count[:completed] = Game.completed_games(current_user).size
 
 
-    @games_remaining_count = @games_count[:all] - @games_count[:started]
+    @games_remaining_count = @games_count[:all] - @games_in_session.count
 
   end
 
@@ -39,5 +41,6 @@ class GamesController < ApplicationController
   def score
     @game = Game.find(params[:id])
     @total_score = @game.total_score_for(current_user)
+    @users = User.leaderboard_ranked
   end
 end

@@ -1,1 +1,23 @@
-TODO: make results
+<h1>Results</h1>
+<p><strong>Ruby:</strong> Flows and arrays</p>
+<section class="resultstable">
+  <% @users.each_with_index do |user, index|%>
+
+    <section class="player <%= user == current_user ? 'current'.html_safe : '' %>">
+      <section class="player-avatar">
+        <% if user.headshot.attached? %>
+            <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default" %>
+          <% else %>
+            <%= link_to edit_user_registration_path do %>
+              <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default" %>
+            <% end %>
+          <% end %>
+      </section>
+      <section class="player-details">
+        <section class="player-name"><h4><%= user.first_name %> <%= user == current_user ? '<span>YOU</span>'.html_safe : '' %></h4><section class="status"><%= image_tag "icon-arrow-up.svg", class: "up" %><%= image_tag "icon-arrow-down.svg", class: "down" %></section></section>
+      </section>
+      <section class="player-score"><h3><%= user.current_total_score %></h3></section>
+    </section>
+
+  <% end %>
+</section>

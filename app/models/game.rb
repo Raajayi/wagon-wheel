@@ -20,6 +20,10 @@ class Game < ApplicationRecord
     end
   end
 
+  def self.games_in_session(user)
+    GameSessions.where(user_id: user.id)
+  end
+
   def self.completed_games(user)
     responses = user.responses.all
     unless responses.nil?
