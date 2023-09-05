@@ -55,20 +55,44 @@
 
       <section class="games">
         <% @games_remaining.each do |game| %>
-          <section class="game <%= game.topic.downcase %>">
+          <section class="game <%= game.topic.downcase %>" data-controller="live-subscription" data-live-subscription-game-id-value="<%= game.id %>">
+            <% if game.questions.count > 1 %>
+              <a href=<%= "games/#{game.id}" %>>
+            <% else %>
+              <a>
+            <% end %>
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                <div class="live" data-live-subscription-target="live">
+                  <% if game.users.count >= 1 %>
+                      <div class="pulse">
+                        <div class="default"></div>
+                        <div class="transition"></div>
+                      </div>
+                      <h6>Live</h6>
+                  <% end %>
+                </div>
+                <% if game.questions.count > 1 %>
+                  <span>Play game</span>
+                <% else %>
+                  <span>Coming soon</span>
+                <% end %>
+            </a>
 
+            <!--
             <% if game.users.count >= 1 %>
               <a href="games/<%= game.id %>">
                 <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
-                  <div class="live">
-                <div class="pulse">
-                  <div class="default"></div>
-                  <div class="transition"></div>
+                <div class="live">
+                  <div class="pulse">
+                    <div class="default"></div>
+                    <div class="transition"></div>
+                  </div>
+                  <h6>Live</h6>
                 </div>
-                <h6>Live</h6>
-              </div>
                 <span>Play game</span>
               </a>
             <% elsif game.questions.count > 1 %>
@@ -86,6 +110,7 @@
                 <span>Coming soon</span>
               </a>
             <% end %>
+            -->
           </section>
         <% end %>
       </section>
