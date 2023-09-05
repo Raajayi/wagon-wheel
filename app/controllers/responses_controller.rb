@@ -6,7 +6,6 @@ class ResponsesController < ApplicationController
 
     # if @response == @response.answer
 
-    raise
     if @response.save
       current_question = @response.question.order
       next_question = @response.question.game.questions.find_by(order: current_question + 1)

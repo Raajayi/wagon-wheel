@@ -48,10 +48,11 @@ export default class extends Controller {
       this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
       if (this.secondsValue <= 0) {
         clearInterval(postSelectionInterval)
-        console.dir(this.formTarget);
-        const formData = new FormData(this.formTarget);
-        console.dir(formData);
-        // this.submitTargt.click();
+
+        this.formTarget[2].disabled = false;
+        this.formTarget[3].disabled = false;
+        this.formTarget[4].disabled = false;
+        this.formTarget[5].disabled = false;
 
         this.formTarget.submit()
       }
