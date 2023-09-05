@@ -163,8 +163,8 @@ oop_3_d = Answer.create!(content: "Super calls the parent's method which has the
 puts "============================================================================================="
 puts "Seeding html quiz"
 
-html = Game.create!(title: "HTML & CSS", topic: "FEWD")
 Game.create!(title: "Bootstrap, grids and layouts", topic: "FEWD")
+html = Game.create!(title: "HTML & CSS", topic: "FEWD")
 
 html_1 = Question.create!(content: "What is a CSS id and why is it useful?", game: html, order: 1)
 html_2 = Question.create!(content: "How do you emphasize a word in a paragraph?", game: html, order: 2)
@@ -241,13 +241,13 @@ response = Response.new(answer: oop_3_b, question: oop_3_b.question, user: user2
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_c, question: html_1_c.question, user: user2)
+response = Response.new(answer: html_1_c, question: html_1_d.question, user: user2)
 response.eval_score
 response.save!
 response = Response.new(answer: html_2_b, question: html_2_b.question, user: user2)
 response.eval_score
 response.save!
-response = Response.new(answer: html_3_a, question: html_3_a.question, user: user2)
+response = Response.new(answer: html_3_a, question: html_3_b.question, user: user2)
 response.eval_score
 response.save!
 
@@ -273,10 +273,10 @@ response = Response.new(answer: oop_3_a, question: oop_3_a.question, user: user3
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_c, question: html_1_c.question, user: user3)
+response = Response.new(answer: html_1_c, question: html_1_b.question, user: user3)
 response.eval_score
 response.save!
-response = Response.new(answer: html_2_d, question: html_2_d.question, user: user3)
+response = Response.new(answer: html_2_d, question: html_2_a.question, user: user3)
 response.eval_score
 response.save!
 response = Response.new(answer: html_3_b, question: html_3_b.question, user: user3)
