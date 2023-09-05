@@ -8,25 +8,94 @@
 
 
 require 'faker'
+require "open-uri"
 
 puts "Destroying db records"
 
+puts "Destroying game sessions"
 GameSession.destroy_all
+puts "Destroying responses"
 Response.destroy_all
+puts "Destroying answers"
 Answer.destroy_all
+puts "Destroying questions"
 Question.destroy_all
+puts "Destroying games"
 Game.destroy_all
+puts "Destroying users"
 User.destroy_all
 
-puts "Started seeding"
+puts "Seeding users"
 
-user1 = User.create!(first_name: 'Christina', last_name: 'Sugiono', email: 'christina@gmail.com', password: "123123")
-user2 = User.create!(first_name: 'Michele', last_name: 'Comolli', email: 'michele@gmail.com', password: "123123")
-user3 = User.create!(first_name: 'Christian', last_name: 'Morris', email: 'christian@gmail.com', password: "123123")
-user4 = User.create!(first_name: 'Kimberly', last_name: 'Wong', email: 'kim@gmail.com', password: "123123")
-user5 = User.create!(first_name: 'Indy', last_name: 'Mandira', email: 'indy@gmail.com', password: "123123")
-user6 = User.create!(first_name: 'Phillip', last_name: 'Peet', email: 'phillip@gmail.com', password: "123123")
-user7 = User.create!(first_name: 'Ademide', last_name: 'Ajayi', email: 'ademide@gmail.com', password: "123123")
+puts "Seeding christina"
+user1 = User.new(first_name: 'Christina', 
+  last_name: 'Sugiono', 
+  email: 'christina@gmail.com', 
+  password: "123123"
+)
+file = URI.open("app/assets/images/christina-body.png")
+user1.full_body.attach(io: file, filename: "christina-body.png", content_type: "image/png")
+user1.save!
+
+puts "Seeding michele"
+user2 = User.new(first_name: 'Michele', 
+  last_name: 'Comolli', 
+  email: 'michele@gmail.com', 
+  password: "123123"
+)
+file = URI.open("app/assets/images/michele-body.png")
+user2.full_body.attach(io: file, filename: "michele-body.png", content_type: "image/png")
+user2.save!
+
+puts "Seeding christian"
+user3 = User.new(first_name: 'Christian', 
+  last_name: 'Morris', 
+  email: 'christian@gmail.com', 
+  password: "123123"
+)
+file = URI.open("app/assets/images/christian-body.png")
+user3.full_body.attach(io: file, filename: "christian-body.png", content_type: "image/png")
+user3.save!
+
+puts "Seeding kim"
+user4 = User.new(first_name: 'Kimberly', 
+  last_name: 'Wong', 
+  email: 'kim@gmail.com', 
+  password: "123123"
+)
+file = URI.open("app/assets/images/kim-body.png")
+user4.full_body.attach(io: file, filename: "kim-body.png", content_type: "image/png")
+user4.save!
+
+puts "Seeding indy"
+user5 = User.new(first_name: 'Indy', 
+  last_name: 'Mandira', 
+  email: 'indy@gmail.com', 
+  password: "123123"
+)
+# file = URI.open("app/assets/images/indy-fullbody.png")
+# user1.full_body.attach(io: file, filename: "indy-fullbody.png", content_type: "image/png")
+# user1.save!
+
+puts "Seeding phil"
+user6 = User.new(first_name: 'Phillip', 
+  last_name: 'Peet', 
+  email: 'phillip@gmail.com', 
+  password: "123123"
+)
+file = URI.open("app/assets/images/phillip-body.png")
+user6.full_body.attach(io: file, filename: "phillip-body.png", content_type: "image/png")
+user6.save!
+
+puts "Seeding ademide"
+user7 = User.new(first_name: 'Ademide', 
+  last_name: 'Ajayi', 
+  email: 'ademide@gmail.com', 
+  password: "123123"
+)
+file = URI.open("app/assets/images/ademide-full-body.png")
+user7.full_body.attach(io: file, filename: "ademide-full-body.png", content_type: "image/png")
+user7.save!
 
 puts "Seeding Ruby quiz"
 
