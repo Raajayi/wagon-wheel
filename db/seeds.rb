@@ -33,8 +33,10 @@ user1 = User.new(first_name: 'Christina',
   email: 'christina@gmail.com', 
   password: "123123"
 )
-file = URI.open("app/assets/images/christina-body.png")
-user1.full_body.attach(io: file, filename: "christina-body.png", content_type: "image/png")
+file1 = URI.open("app/assets/images/christina-body.png")
+user1.full_body.attach(io: file1, filename: "christina-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/christina-head.png")
+user1.headshot.attach(io: file2, filename: "christina-headshot.png", content_type: "image/png")
 user1.save!
 
 puts "Seeding michele"
@@ -43,18 +45,22 @@ user2 = User.new(first_name: 'Michele',
   email: 'michele@gmail.com', 
   password: "123123"
 )
-file = URI.open("app/assets/images/michele-body.png")
-user2.full_body.attach(io: file, filename: "michele-body.png", content_type: "image/png")
+file1 = URI.open("app/assets/images/michele-body.png")
+user2.full_body.attach(io: file1, filename: "michele-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/michele-head.png")
+user2.headshot.attach(io: file2, filename: "michele-headshot.png", content_type: "image/png")
 user2.save!
 
-puts "Seeding christian"
-user3 = User.new(first_name: 'Christian', 
-  last_name: 'Morris', 
-  email: 'christian@gmail.com', 
+puts "Seeding millie"
+user3 = User.new(first_name: 'Millie', 
+  last_name: 'Pratley', 
+  email: 'millie@gmail.com', 
   password: "123123"
 )
-file = URI.open("app/assets/images/christian-body.png")
-user3.full_body.attach(io: file, filename: "christian-body.png", content_type: "image/png")
+file1 = URI.open("app/assets/images/millie-body.png")
+user3.full_body.attach(io: file1, filename: "millie-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/millie-head.png")
+user3.headshot.attach(io: file2, filename: "millie-headshot.png", content_type: "image/png")
 user3.save!
 
 puts "Seeding kim"
@@ -63,8 +69,10 @@ user4 = User.new(first_name: 'Kimberly',
   email: 'kim@gmail.com', 
   password: "123123"
 )
-file = URI.open("app/assets/images/kim-body.png")
-user4.full_body.attach(io: file, filename: "kim-body.png", content_type: "image/png")
+file1 = URI.open("app/assets/images/kim-body.png")
+user4.full_body.attach(io: file1, filename: "kim-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/kim-head.png")
+user4.headshot.attach(io: file2, filename: "kim-headshot.png", content_type: "image/png")
 user4.save!
 
 puts "Seeding indy"
@@ -73,7 +81,7 @@ user5 = User.new(first_name: 'Indy',
   email: 'indy@gmail.com', 
   password: "123123"
 )
-# file = URI.open("app/assets/images/indy-fullbody.png")
+# file = URI.open("app/assets/images/indy-1fullbody.png")
 # user1.full_body.attach(io: file, filename: "indy-fullbody.png", content_type: "image/png")
 # user1.save!
 
@@ -83,8 +91,10 @@ user6 = User.new(first_name: 'Phillip',
   email: 'phillip@gmail.com', 
   password: "123123"
 )
-file = URI.open("app/assets/images/phillip-body.png")
-user6.full_body.attach(io: file, filename: "phillip-body.png", content_type: "image/png")
+file1 = URI.open("app/assets/images/phillip-body.png")
+user6.full_body.attach(io: file1, filename: "phillip-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/phillip-head.png")
+user6.headshot.attach(io: file2, filename: "phillip-headshot.png", content_type: "image/png")
 user6.save!
 
 puts "Seeding ademide"
@@ -93,8 +103,10 @@ user7 = User.new(first_name: 'Ademide',
   email: 'ademide@gmail.com', 
   password: "123123"
 )
-file = URI.open("app/assets/images/ademide-full-body.png")
-user7.full_body.attach(io: file, filename: "ademide-full-body.png", content_type: "image/png")
+file1 = URI.open("app/assets/images/ademide-full-body.png")
+user7.full_body.attach(io: file1, filename: "ademide-full-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/ademide-head.png")
+user7.headshot.attach(io: file2, filename: "ademide-headshot.png", content_type: "image/png")
 user7.save!
 
 puts "Seeding Ruby quiz"
