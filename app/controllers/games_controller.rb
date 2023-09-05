@@ -42,5 +42,6 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @total_score = @game.total_score_for(current_user)
     @users = User.leaderboard_ranked
+    GameSession.find_by(game: @game, user: current_user).destroy
   end
 end
