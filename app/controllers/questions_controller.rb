@@ -6,5 +6,8 @@ class QuestionsController < ApplicationController
     @correct_answer_id = @question.correct_answer.first.id
 
     # @ladder
+
+    @users = User.leaderboard_ranked
+
   end
 end
