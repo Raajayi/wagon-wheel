@@ -5,7 +5,8 @@
 
     <section class="users">
       <% @users.each do |user| %>
-        <section class="user <%= 'connected' if @game.users.include? user %>">
+        <section class="user <%= 'connected' if (user.id == current_user.id) || (@game.users.include? user) %>"
+          data-game-subscription-target="avatarContainer" data-user-id=<%= user.id %>>
           <% if user.headshot.attached? %>
             <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default" %>
           <% else %>

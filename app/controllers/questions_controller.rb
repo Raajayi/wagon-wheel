@@ -4,5 +4,7 @@ class QuestionsController < ApplicationController
     @question_count = @question.game.questions.count
     @response = Response.new
     @correct_answer_id = @question.correct_answer.first.id
+
+    # @ladder
   end
 end
