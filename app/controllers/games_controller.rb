@@ -39,5 +39,6 @@ class GamesController < ApplicationController
   def score
     @game = Game.find(params[:id])
     @total_score = @game.total_score_for(current_user)
+    @users = User.leaderboard_ranked
   end
 end

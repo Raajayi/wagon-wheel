@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def index
   end
- 
+
   def landing
   end
 
@@ -22,9 +22,13 @@ class PagesController < ApplicationController
   end
 
   def results
+    @users = User.leaderboard_ranked
   end
 
   def statistics
+  end
+
+  def prizewheel
   end
 
 end

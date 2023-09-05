@@ -1,0 +1,17 @@
+<section class="reward" data-controller="prizewheel">
+
+  <h1>Prize wheel</h1>
+  <p>It's time to spin the wheel to collect your prize</p>
+
+  <section class="prize" data-prizewheel-target="spinElement">
+    <%= image_tag "pin-right.svg", class: "pin" %>
+    <%= image_tag "wheel.svg", class: "wheel" %>
+  </section>
+
+  <section class="congratulations" data-prizewheel-target="resultElement">
+    <p>Congratulations. You won a Bintang!</p>
+  </section>
+
+<button data-action="click->prizewheel#fire" class="secondary button">Spin the wheel!</button>
+
+</section>
