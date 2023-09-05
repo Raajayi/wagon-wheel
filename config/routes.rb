@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   resources :pages, only: [:index]
   get '/statistics', to: 'pages#statistics', as: 'statistics'
 
+  resources :pages, only: [:index]
+  get '/prizewheel', to: 'pages#prizewheel', as: 'prizewheel'
+
   resources :questions, only: [:show]
   resources :answers, only: [:show]
   resources :responses, only: [:create]
