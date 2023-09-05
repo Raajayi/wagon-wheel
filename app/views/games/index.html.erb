@@ -56,12 +56,22 @@
       <section class="games">
         <% @games_remaining.each do |game| %>
           <section class="game <%= game.topic.downcase %>">
+
+            <% if game.questions.count > 1 %>
               <a href="games/<%= game.id %>">
                 <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
                 <span>Play game</span>
               </a>
+            <% else %>
+              <a>
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                <span>Coming soon</span>
+              </a>
+            <% end %>
           </section>
         <% end %>
       </section>
