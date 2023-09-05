@@ -11,6 +11,7 @@ require 'faker'
 
 puts "Destroying db records"
 
+GameSession.destroy_all
 Response.destroy_all
 Answer.destroy_all
 Question.destroy_all
