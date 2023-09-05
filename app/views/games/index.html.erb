@@ -10,7 +10,7 @@
         <% end %>
       <% end %>
 
-        <p>Welcome back <%= current_user.first_name %>,</p>
+        <p>Welcome back <%= current_user.first_name.capitalize %>,</p>
         <h1>You're a Wagon Wheel genius!</h1>
         <ul>
           <li class="current-standing"><span>Current standing</span><strong>1st</strong></li>
@@ -57,7 +57,21 @@
         <% @games_remaining.each do |game| %>
           <section class="game <%= game.topic.downcase %>">
 
-            <% if game.questions.count > 1 %>
+            <% if game.users.count >= 1 %>
+              <a href="games/<%= game.id %>">
+                <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
+                <h4><%= game.topic %></h4>
+                <h5><%= game.title %></h5>
+                  <div class="live">
+                <div class="pulse">
+                  <div class="default"></div>
+                  <div class="transition"></div>
+                </div>
+                <h6>Live</h6>
+              </div>
+                <span>Play game</span>
+              </a>
+            <% elsif game.questions.count > 1 %>
               <a href="games/<%= game.id %>">
                 <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
