@@ -132,7 +132,10 @@ background-repeat: no-repeat}
 // .questions-template .menu{display: none}
 // .questions-template .main{grid-template-columns: 1fr}
 
-.sessions-template.new, .registrations-template.new, .passwords-template.new{max-width: 450px; margin: 60px auto 0}
+.registrations-template.create .menu, .passwords-template.create .menu, .sessions-template.create .menu{display: none}
+.registrations-template.create .main, .passwords-template.create .main, .sessions-template.create .main{grid-template-columns: 1fr}
+
+.sessions-template.new, .registrations-template.new, .passwords-template.new, .registrations-template.create, .passwords-template.create, .sessions-template.create{max-width: 450px; margin: 60px auto 0}
 .sessions-template .form-inputs, .registrations-template .form-inputs, .passwords-template .form-inputs{margin: 40px 0 0}
 .sessions-template label, .registrations-template label, .passwords-template label{font-size: 16px}
 .sessions-template .form-control, .registrations-template .form-control, .passwords-template .form-control{background: #fff; border: 0; padding: 18px; border-radius: 8px}
@@ -174,19 +177,40 @@ background-repeat: no-repeat}
 .leadertable .player:nth-of-type(3) .player-total{background: #C3A577; border-color: #C3A577; color: #fff}
 
 .resultstable{margin: 60px 0}
-.resultstable .player{position: relative; display: flex; justify-content: space-between; background: #fff; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05); border-radius: 12px; padding: 15px; margin-bottom: 20px; align-items: center; min-height: 100px}
-.resultstable .player .player-avatar{max-width: 150px}
+.resultstable .player{position: relative; display: flex; justify-content: space-between; background: #fff; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05); padding: 15px; align-items: center; min-height: 100px; border-bottom: 2px solid #E8E8E8}
+.resultstable .player .player-avatar .profile-head-default{width: 70px; background: #D1E9FF; border-radius: 70px; margin: 0 20px 0 0}
 .resultstable .player .player-total{height: 60px; width: 60px; text-align: center; line-height: 56px; font-size: 22px; font-weight: bold; border-radius: 60px; border: 2px solid #1B1C1E; margin: -15px 0 0; position: absolute; right: 15px}
-.resultstable .player .player-details{margin: 0; width: 90%}
-.resultstable .player .player-points{margin: -10px 0 0}
-.resultstable .player .player-name{display: flex; justify-content: space-between; align-items: center}
+.resultstable .player .player-details{margin: 0 10% 0 0; width: 30%; text-align: left}
+.resultstable .player .player-points{width: 35%; text-align: left; color: #999}
+// .resultstable .player .player-name{display: flex; justify-content: space-between; align-items: center}
 .resultstable .player .player-name span{font-size: 12px; padding: 5px 10px; border-radius: 5px; border: 2px solid; top: -3px; position: relative; margin: 0 5px}
-.resultstable .player .player-score h3{margin: 0 20px 0 0; font-weight: bold}
+.resultstable .player .player-score{width: 20%; text-align: right}
+.resultstable .player .player-score h3{margin: 0 20px 0 0; font-weight: 600; font-size: 20px}
 .resultstable .player .player-name h4{margin: 0}
 .resultstable .player .status{display: flex; margin: 0 10px 0 0}
 
 .pages-template .resultstable .player .profile-head-default{width: 70px}
 
+.resultstable .player .player-avatar .profile-body-default{display: none}
+
+.resultstable .player:last-of-type{border-bottom-right-radius: 12px; border-bottom-left-radius: 12px}
+
+.resultstable .player:first-of-type{padding: 0; border-top-right-radius: 12px; border-top-left-radius: 12px}
+.resultstable .player:first-of-type .player-details{margin-left: -30px}
+.resultstable .player:first-of-type .player-points{margin-left: -15px}
+.resultstable .player:first-of-type .player-details h4{margin-left: 25px}
+.resultstable .player:first-of-type .player-score h3{margin-right: 35px}
+
+
+.resultstable .player:first-of-type .player-avatar .profile-head-default{display: none}
+.resultstable .player:first-of-type .player-avatar .profile-body-default{display: block; background: none !important; margin: -50px 0 0 -30px; max-width: 150px}
+
+// .resultstable .player.current{background: #1B1C1E; color: #fff; border-top: 2px solid #1b1c1e; border-bottom: 2px solid #1b1c1e}
+.resultstable .player.current{background: #1B1C1E; color: #fff}
+
+.pages-template.results .resultstable .player:first-of-type{padding: 0}
+.pages-template.results .resultstable .player{min-height: 70px; padding: 5px 15px}
+.pages-template.results .resultstable .player .profile-head-default{width: 50px}
 
 /* img[data-user-id="10"], */ .Millie{background: #E2D0BE !important}
 /* img[data-user-id="12"], */ .Phillip{background: #D1E9FF !important}
@@ -196,7 +220,14 @@ background-repeat: no-repeat}
 /* img[data-user-id="9"], */ .Michele{background: #FEE7C4 !important}
 /* img[data-user-id="152"], */ .Indy{background: #FADDDD !important}
 
-
+.resultstable .player:nth-of-type(1) .player-score h3:after{content:'1st'}
+.resultstable .player:nth-of-type(2) .player-score h3:after{content:'2nd'}
+.resultstable .player:nth-of-type(3) .player-score h3:after{content:'3rd'}
+.resultstable .player:nth-of-type(4) .player-score h3:after{content:'4th'}
+.resultstable .player:nth-of-type(5) .player-score h3:after{content:'5th'}
+.resultstable .player:nth-of-type(6) .player-score h3:after{content:'6th'}
+.resultstable .player:nth-of-type(7) .player-score h3:after{content:'7th'}
+.resultstable .player:nth-of-type(8) .player-score h3:after{content:'8th'}
 
 .questions-template .livetable{padding: 60px 30px; background: #f7f7f7; position: absolute; top: -60px; left: 0; right: 0;  width: 100%; min-height: 100vh; opacity: 0; visibility: hidden; transition: 0.5s}
 .questions-template .livetable.show{opacity: 1; visibility: visible; transition: 0.5s}

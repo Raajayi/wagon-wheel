@@ -1,6 +1,6 @@
 
 <div data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
-    <h3>Hang Tight!</h3>
+    <h2>Hang Tight!</h2>
     <p>Your friends are connecting in. The game will commence shortly.</p>
 
     <section class="users">
@@ -19,7 +19,7 @@
         </section>
       <% end %>
   </section>
-    
+
   <section class="actions <%= "d-none" unless current_user == User.find_by(email: "phillip@gmail.com") %>">
     <%= link_to "Start game", question_url(@game.questions.find_by(order: 1)), class: "primary button", data: { game_subscription_target: "start" } %>
   </section>
