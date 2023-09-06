@@ -96,6 +96,7 @@ background-repeat: no-repeat}
 .games .icon{margin: 0 0 20px}
 .games .game a{text-decoration: none; color: #1b1c1e; padding: 40px; display: block; background: #fff; border-radius: 12px; height: 350px; position: relative; box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05)}
 .games .game span{font:500 14px/28px "Poppins", sans-serif; position: absolute; bottom: 40px; color: #29BF12}
+.games .game span.disable{color: #A3A3A3}
 
 .questions{background: #fff; min-height: 100vh}
 .questions .details{padding: 60px 0 0}
@@ -183,6 +184,18 @@ background-repeat: no-repeat}
 .resultstable .player .status{display: flex; margin: 0 10px 0 0}
 
 .pages-template .resultstable .player .profile-head-default{width: 70px}
+
+
+/* img[data-user-id="10"], */ .Millie{background: #E2D0BE !important}
+/* img[data-user-id="12"], */ .Phillip{background: #D1E9FF !important}
+/* img[data-user-id="13"], */ .Ademide{background: #DDDDDD !important}
+/* img[data-user-id="11"], */ .Kimberley{background: #FFEFD8 !important}
+/* img[data-user-id="8"], */ .Christina{background: #D7F5E9 !important}
+/* img[data-user-id="9"], */ .Michele{background: #FEE7C4 !important}
+/* img[data-user-id="152"], */ .Indy{background: #FADDDD !important}
+
+
+
 
 .questions-template .livetable{padding: 60px 30px; background: #f7f7f7}
 .questions-template .livetable h1{padding: 0 0 40px}
