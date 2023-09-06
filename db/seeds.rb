@@ -76,11 +76,7 @@ user4.headshot.attach(io: file2, filename: "kim-headshot.png", content_type: "im
 user4.save!
 
 puts "Seeding indy"
-user5 = User.new(first_name: 'Indy', 
-  last_name: 'Mandira', 
-  email: 'indy@gmail.com', 
-  password: "123123"
-)
+user5 = User.create!(first_name: 'Indy', last_name: 'Mandira', email: 'indy@gmail.com', password: "123123")
 # file = URI.open("app/assets/images/indy-1fullbody.png")
 # user1.full_body.attach(io: file, filename: "indy-fullbody.png", content_type: "image/png")
 # user1.save!
