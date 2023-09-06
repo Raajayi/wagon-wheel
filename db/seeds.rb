@@ -207,15 +207,15 @@ response = Response.new(answer: oop_3_c, question: oop_3_c.question, user: user1
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_d, question: html_1_d.question, user: user1)
-response.eval_score
-response.save!
-response = Response.new(answer: html_2_a, question: html_2_a.question, user: user1)
-response.eval_score
-response.save!
-response = Response.new(answer: html_3_b, question: html_3_b.question, user: user1)
-response.eval_score
-response.save!
+# response = Response.new(answer: html_1_d, question: html_1_d.question, user: user1)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_2_a, question: html_2_a.question, user: user1)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_3_b, question: html_3_b.question, user: user1)
+# response.eval_score
+# response.save!
 
 puts "User 2's response"
 
@@ -239,15 +239,15 @@ response = Response.new(answer: oop_3_b, question: oop_3_b.question, user: user2
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_c, question: html_1_d.question, user: user2)
-response.eval_score
-response.save!
-response = Response.new(answer: html_2_b, question: html_2_b.question, user: user2)
-response.eval_score
-response.save!
-response = Response.new(answer: html_3_a, question: html_3_b.question, user: user2)
-response.eval_score
-response.save!
+# response = Response.new(answer: html_1_c, question: html_1_d.question, user: user2)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_2_b, question: html_2_b.question, user: user2)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_3_a, question: html_3_b.question, user: user2)
+# response.eval_score
+# response.save!
 
 puts "User 3's responses"
 
@@ -271,15 +271,15 @@ response = Response.new(answer: oop_3_a, question: oop_3_a.question, user: user3
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_c, question: html_1_b.question, user: user3)
-response.eval_score
-response.save!
-response = Response.new(answer: html_2_d, question: html_2_a.question, user: user3)
-response.eval_score
-response.save!
-response = Response.new(answer: html_3_b, question: html_3_b.question, user: user3)
-response.eval_score
-response.save!
+# response = Response.new(answer: html_1_c, question: html_1_b.question, user: user3)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_2_d, question: html_2_a.question, user: user3)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_3_b, question: html_3_b.question, user: user3)
+# response.eval_score
+# response.save!
 
 puts "User 4's responses"
 
@@ -303,14 +303,14 @@ response = Response.new(answer: oop_3_c, question: oop_3_c.question, user: user4
 response.eval_score
 response.save!
 
-response = Response.new(answer: html_1_a, question: html_1_a.question, user: user4)
-response.eval_score
-response.save!
-response = Response.new(answer: html_2_b, question: html_2_b.question, user: user4)
-response.eval_score
-response.save!
-response = Response.new(answer: html_3_c, question: html_3_c.question, user: user4)
-response.eval_score
-response.save!
+# response = Response.new(answer: html_1_a, question: html_1_a.question, user: user4)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_2_b, question: html_2_b.question, user: user4)
+# response.eval_score
+# response.save!
+# response = Response.new(answer: html_3_c, question: html_3_c.question, user: user4)
+# response.eval_score
+# response.save!
 
 puts "Seeding complete!"
