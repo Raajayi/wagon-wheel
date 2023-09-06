@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
+    @game = @question.game
     @question_count = @question.game.questions.count
     @response = Response.new
     @correct_answer_id = @question.correct_answer.first.id

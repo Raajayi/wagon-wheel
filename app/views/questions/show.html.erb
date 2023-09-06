@@ -4,7 +4,7 @@
 
       <section class="details">
         <h3>Question <%= @question.order %> of <%= @question_count %></h3>
-        <p><strong><%#= @game.topic %>Ruby: </strong> <%#= @game.title %>Insert topic name</p>
+        <p><strong><%= @game.topic %>: </strong><%= @game.title %></p>
 
       </section>
 
@@ -20,7 +20,7 @@
           <div class="form-inputs d-none">
             <%= f.input :question_id, input_html: { value: @question.id }%>
           </div>
-          <div class="form-actions">
+          <div class="form-actions d-none">
             <%= f.button :submit, value: "Submit answer", class: "primary button", data: { countdown_target: "submit"} %>
           </div>
 
