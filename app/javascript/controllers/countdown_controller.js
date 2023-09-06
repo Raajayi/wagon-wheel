@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="countdown"
 export default class extends Controller {
-  static targets = ['submit','content', 'form', 'radio']
+  static targets = ['submit','content', 'form', 'radio', 'livetable']
 
   static values = {
     seconds: Number,
@@ -10,12 +10,27 @@ export default class extends Controller {
   }
 
   connect() {
-    this.countdown();
+    this.onShowLadderEnd();
+  }
+
+  onShowLadderEnd() {
+    // Set the timer value here
+    this.secondsValue = 5
+    const preSelectionInterval = setInterval(() => {
+      this.secondsValue -= 1;
+      this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+      if (this.secondsValue <= 0) {
+        clearInterval(preSelectionInterval);
+        this.livetableTarget.classList.remove("show");
+        this.countdown()
+      }
+    }, 1000);
+
   }
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 15
+    this.secondsValue = 10
     this.contentTarget.innerHTML = `<span class="count">${this.secondsValue}</span><span class="seconds">seconds</span>`;
 
     const preSelectionInterval = setInterval(() => {
@@ -40,7 +55,7 @@ export default class extends Controller {
     this.formTarget[4].disabled = true;
     this.formTarget[5].disabled = true;
 
-    this.secondsValue = 2;
+    this.secondsValue = 5;
     this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
 
     const postSelectionInterval = setInterval(() => {
@@ -54,7 +69,7 @@ export default class extends Controller {
         this.formTarget[4].disabled = false;
         this.formTarget[5].disabled = false;
 
-        this.formTarget.submit()
+        this.formTarget.submit();
       }
     }, 1000);
   }
