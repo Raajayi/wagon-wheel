@@ -76,34 +76,36 @@ user4.headshot.attach(io: file2, filename: "kim-headshot.png", content_type: "im
 user4.save!
 
 puts "Seeding indy"
-user5 = User.create!(first_name: 'Indy', last_name: 'Mandira', email: 'indy@gmail.com', password: "123123")
-# file = URI.open("app/assets/images/indy-1fullbody.png")
-# user1.full_body.attach(io: file, filename: "indy-fullbody.png", content_type: "image/png")
-# user1.save!
-
-puts "Seeding phil"
-user6 = User.new(first_name: 'Phillip', 
-  last_name: 'Peet', 
-  email: 'phillip@gmail.com', 
+user5 = User.new(first_name: 'Indy', 
+  last_name: 'Mandira', 
+  email: 'indy@gmail.com', 
   password: "123123"
 )
-file1 = URI.open("app/assets/images/phillip-body.png")
-user6.full_body.attach(io: file1, filename: "phillip-body.png", content_type: "image/png")
-file2 = URI.open("app/assets/images/phillip-head.png")
-user6.headshot.attach(io: file2, filename: "phillip-headshot.png", content_type: "image/png")
-user6.save!
+file1 = URI.open("app/assets/images/indy-fullbody.png")
+user5.full_body.attach(io: file1, filename: "indy-fullbody.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/indy-head.png")
+user5.headshot.attach(io: file2, filename: "indy-headshot.png", content_type: "image/png")
+user5.save!
 
 puts "Seeding ademide"
-user7 = User.new(first_name: 'Ademide', 
+user6 = User.new(first_name: 'Ademide', 
   last_name: 'Ajayi', 
   email: 'ademide@gmail.com', 
   password: "123123"
 )
 file1 = URI.open("app/assets/images/ademide-full-body.png")
-user7.full_body.attach(io: file1, filename: "ademide-full-body.png", content_type: "image/png")
+user6.full_body.attach(io: file1, filename: "ademide-body.png", content_type: "image/png")
 file2 = URI.open("app/assets/images/ademide-head.png")
-user7.headshot.attach(io: file2, filename: "ademide-headshot.png", content_type: "image/png")
-user7.save!
+user6.headshot.attach(io: file2, filename: "ademide-headshot.png", content_type: "image/png")
+user6.save!
+
+puts "Seeding phil (admin)"
+user7 = User.create!(first_name: 'Phillip', last_name: 'Peet', email: 'phillip@gmail.com', password: "123123")
+# file1 = URI.open("app/assets/images/ademide-full-body.png")
+# user7.full_body.attach(io: file1, filename: "ademide-full-body.png", content_type: "image/png")
+# file2 = URI.open("app/assets/images/ademide-head.png")
+# user7.headshot.attach(io: file2, filename: "ademide-headshot.png", content_type: "image/png")
+# user7.save!
 
 puts "Seeding Ruby quiz"
 

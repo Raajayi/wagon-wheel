@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @game_session = GameSession.create(game: @game, user: current_user) if GameSession.find_by(game: @game, user: current_user).nil?
-    @users = User.all
+    @users = User.all.first(7) # just for the demo incase other ppl join during presentation
     GameChannel.broadcast_to(
       @game,
       {
