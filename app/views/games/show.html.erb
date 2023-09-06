@@ -19,9 +19,8 @@
         </section>
       <% end %>
   </section>
-
-
-    <section class="actions">
-      <%= link_to "Play game", question_url(@game.questions.find_by(order: 1)), class: "primary button" %>
-    </section>
+    
+  <section class="actions <%= "d-none" unless current_user == User.find_by(email: "phillip@gmail.com") %>">
+    <%= link_to "Start game", question_url(@game.questions.find_by(order: 1)), class: "primary button", data: { game_subscription_target: "start" } %>
+  </section>
 </div>
