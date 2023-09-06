@@ -8,10 +8,10 @@
         <section class="user <%= 'connected' if (user.id == current_user.id) || (@game.users.include? user) %>"
           data-game-subscription-target="avatarContainer" data-user-id=<%= user.id %>>
           <% if user.headshot.attached? %>
-            <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default" %>
+            <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{user.first_name}" %>
           <% else %>
             <%= link_to edit_user_registration_path do %>
-              <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default" %>
+              <%= image_tag "profile-head-default.png", data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{user.first_name}" %>
             <% end %>
           <% end %>
           <%= image_tag "icon-tick.svg", class: "tick" %>
