@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :responses
   has_one_attached :headshot
   has_one_attached :full_body
+  has_many :game_sessions
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -19,5 +20,9 @@ class User < ApplicationRecord
 
   def self.leaderboard_ranked
     all.sort_by(&:current_total_score).reverse
+  end
+
+  def game_score(game)
+    responses.where(question: game.questions).pluck(:score).sum
   end
 end

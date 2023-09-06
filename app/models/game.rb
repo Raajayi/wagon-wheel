@@ -35,4 +35,5 @@ class Game < ApplicationRecord
       return games_completed
     end
   end
+
 end

@@ -17,7 +17,7 @@
       <section class="player-details">
         <section class="player-name"><h4><%= user.first_name %> <%= user == current_user ? '<span>YOU</span>'.html_safe : '' %></h4><section class="status"><%= image_tag "icon-arrow-up.svg", class: "up" %><%= image_tag "icon-arrow-down.svg", class: "down" %></section></section>
       </section>
-      <section class="player-score"><h3><%= user.current_total_score %></h3></section>
+      <section class="player-score"><h3><%= user.game_score(@game) %></h3></section>
     </section>
 
   <% end %>
