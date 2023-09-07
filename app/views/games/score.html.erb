@@ -3,7 +3,7 @@
 
 <%#= current_user.first_name %>
 
-<section class="resultstable" data-controller="score-timer">
+<section class="resultstable" data-controller="score-timer" data-score-timer-current-user-id-value="<%= current_user.id %>" data-score-timer-winner-user-id-value="<%= @users.first.id %>">
 
   <% @users.each_with_index do |user, index|%>
 
@@ -41,7 +41,7 @@
     <section class="result">
       <%= image_tag "phillip-head-party.png", class: "party" %>
       <span class="won">You won!</span>
-      <p>Well done <%= @user_first_name %>. You mastered <%= @game.topic %>, <%= @game.title %>. It's now time to collect your prize!</p>
+      <p>Well done <%= @users.first %>. You mastered <%= @game.topic %>, <%= @game.title %>. It's now time to collect your prize!</p>
     </section>
   </section>
 
