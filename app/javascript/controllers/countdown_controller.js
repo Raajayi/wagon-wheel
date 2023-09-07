@@ -68,7 +68,7 @@ export default class extends Controller {
 
     const postSelectionInterval = setInterval(() => {
       this.secondsValue -= 1;
-     //  this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+     // this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
       if (this.secondsValue <= 0) {
         clearInterval(postSelectionInterval)
 
