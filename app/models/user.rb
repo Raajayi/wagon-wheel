@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def game_score(game)
     responses.where(question: game.questions).pluck(:score).sum
   end
+
+  def old_game_score(game)
+    responses.where(question: game.questions).order("created_at DESC").offset(1).pluck(:score).sum
+  end
 end

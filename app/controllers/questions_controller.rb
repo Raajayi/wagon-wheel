@@ -11,6 +11,15 @@ class QuestionsController < ApplicationController
 
     # @game_session = GameSession.find_by(game: @question.game)
     @users = @game.users
+
+    @old_order = @game.played_users.sort_by do |user|
+        -user.old_game_score(@game)
+    end
+
+    @new_order = @game.played_users.sort_by do |user|
+      -user.game_score(@game)
+    end
+
     # @users = @game_session.current_users
     # @users = User.leaderboard_ranked
 
