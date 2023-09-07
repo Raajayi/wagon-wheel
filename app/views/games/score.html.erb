@@ -1,9 +1,9 @@
 <h2>Final result</h2>
-<<<<<<< HEAD
-<p>Great job <%= current_user.first_name %>. Your total score is <%= @total_score %></p>
-=======
-<p>You answered <%= @total_score %> questions correctly.</p>
->>>>>>> ab0f37ccf0f705ec9b5fc3b45ac5bb2bcd2130fa
+<% if @total_score == 1 %>
+  <p>You answered <%= @total_score %> question correctly.</p>
+<% else %>
+  <p>You answered <%= @total_score %> questions correctly.</p>
+<% end %>
 
 <section class="resultstable" data-controller="score-timer" data-score-timer-current-user-id-value="<%= current_user.id %>" data-score-timer-winner-user-id-value="<%= @users.first.id %>">
 
