@@ -6,11 +6,17 @@ export default class extends Controller {
 
   static values = {
     seconds: Number,
-    correctAnswerId: String
+    correctAnswerId: String,
+    firstQuestion: Boolean
   }
 
   connect() {
-    this.onShowLadderEnd();
+    if (this.firstQuestionValue) {
+      this.livetableTarget.classList.remove("show");
+      this.countdown()
+    } else {
+      this.onShowLadderEnd();
+    }
   }
 
   onShowLadderEnd() {
