@@ -3,6 +3,7 @@
 
 <section class="resultstable">
 
+
   <% @users.each_with_index do |user, index|%>
 
     <section class="player <%= user == current_user ? 'current'.html_safe : '' %>">

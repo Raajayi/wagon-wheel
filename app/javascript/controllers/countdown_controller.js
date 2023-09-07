@@ -30,7 +30,7 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 10
+    this.secondsValue = 20
     this.contentTarget.innerHTML = `<span class="count">${this.secondsValue}</span><span class="seconds">seconds</span>`;
 
     const preSelectionInterval = setInterval(() => {
