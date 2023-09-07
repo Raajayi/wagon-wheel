@@ -1,5 +1,6 @@
 <h2>Final result</h2>
 <p>Great job <%= current_user.first_name %>. Your total score is <%= @total_score %></p>
+<%= link_to "Spin the wheel", prizewheel_path %>
 
 <section class="resultstable" data-controller="score-timer">
 

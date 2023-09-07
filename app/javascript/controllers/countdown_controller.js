@@ -6,11 +6,17 @@ export default class extends Controller {
 
   static values = {
     seconds: Number,
-    correctAnswerId: String
+    correctAnswerId: String,
+    firstQuestion: Boolean
   }
 
   connect() {
-    this.onShowLadderEnd();
+    if (this.firstQuestionValue) {
+      this.livetableTarget.classList.remove("show");
+      this.countdown()
+    } else {
+      this.onShowLadderEnd();
+    }
   }
 
   onShowLadderEnd() {
@@ -30,7 +36,9 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 30
+
+    this.secondsValue = 20
+
     this.contentTarget.innerHTML = `<span class="count">${this.secondsValue}</span><span class="seconds">seconds</span>`;
 
     const preSelectionInterval = setInterval(() => {

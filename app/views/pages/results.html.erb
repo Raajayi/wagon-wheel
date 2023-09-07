@@ -3,7 +3,11 @@
   <h2><%= game.topic %></h2>
   <p><%= game.title %></p>
 
+
   <section class="resultstable">
+
+  <% @users.each_with_index do |user, index|%>
+
 
     <% game.played_users.sort_by{|user| -user.game_score(game) }.each_with_index do |user, index|%>
 

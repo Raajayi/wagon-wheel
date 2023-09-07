@@ -39,8 +39,9 @@ class GamesController < ApplicationController
   end
 
   def score
-    sleep(2)
 
+    sleep(5)
+    
     @user_first_name = current_user.first_name
 
     @game = Game.find(params[:id])

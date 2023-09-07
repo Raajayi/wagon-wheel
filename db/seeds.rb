@@ -101,11 +101,11 @@ user6.save!
 
 puts "Seeding phil (admin)"
 user7 = User.create!(first_name: 'Phillip', last_name: 'Peet', email: 'phillip@gmail.com', password: "123123")
-# file1 = URI.open("app/assets/images/ademide-full-body.png")
-# user7.full_body.attach(io: file1, filename: "ademide-full-body.png", content_type: "image/png")
-# file2 = URI.open("app/assets/images/ademide-head.png")
-# user7.headshot.attach(io: file2, filename: "ademide-headshot.png", content_type: "image/png")
-# user7.save!
+file1 = URI.open("app/assets/images/phillip-body.png")
+user7.full_body.attach(io: file1, filename: "phillip-full-body.png", content_type: "image/png")
+file2 = URI.open("app/assets/images/phillip-head.png")
+user7.headshot.attach(io: file2, filename: "phillip-headshot.png", content_type: "image/png")
+user7.save!
 
 puts "Seeding Ruby quiz"
 
