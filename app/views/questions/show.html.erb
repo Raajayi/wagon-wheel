@@ -29,7 +29,7 @@
         </div>
 
         <!-- Live table -->
-        <section class="livetable show" data-countdown-target="livetable">
+        <section class="livetable show" data-countdown-target="livetable" data-controller="result-order" data-result-order-new-order-value="<%= @new_order.pluck(:id).to_json %>">
 
           <h2>Live ladder</h2>
           <div class="live">
@@ -40,9 +40,12 @@
             <h6>Live</h6>
           </div>
           <br>
-          <% @users.each_with_index do |user, index|%>
 
-            <section class="player <%= user == current_user ? 'current'.html_safe : '' %>">
+          <section class="liveladder-container">
+
+          <% @old_order.each_with_index do |user, index|%>
+
+            <section class="player <%= user == current_user ? 'current'.html_safe : '' %>" data-result-order-target="player" data-user-id="<%= user.id %>" style="top: <%= 120*index %>px">
               <section class="player-avatar">
                 <% if user.headshot.attached? %>
                     <%= cl_image_tag user.headshot.key, data: { user_id: user.id, game_subscription_target: "avatar"}, class: "profile-head-default #{user.first_name}" %>
@@ -58,8 +61,10 @@
               <section class="player-score"><h3><%= user.game_score(@question.game) %></h3></section>
             </section>
 
-
           <% end %>
+
+          </section>
+
         </section>
       </div>
 
