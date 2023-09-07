@@ -2,12 +2,19 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="score-timer"
 export default class extends Controller {
+  static values = {
+    currentUserId: Number,
+    winnerUserId: Number
+  }
 
   static targets = ['resultstable']
 
   connect() {
-    console.log("Connected")
-    this.onGameEnd();
+    // console.log("Connected")
+    if (this.currentUserIdValue === this.winnerUserIdValue) {
+      this.onGameEnd();
+    }
+
   }
 
   onGameEnd() {
