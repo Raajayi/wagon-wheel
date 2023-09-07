@@ -118,7 +118,7 @@
 
     </section>
 
-    <section class="wrapper">
+    <section class="wrapper d-none">
 
       <section class="title">
         <h3>Started games</h3>
@@ -191,7 +191,7 @@
       <section class="games">
         <% @games_completed.each do |game| %>
           <section class="game <%= game.topic.downcase %>">
-              <a href="games/<%= game.id %>">
+              <a href="results">
                 <%= image_tag "icon-#{game.topic.downcase}.svg", class: "icon" %>
                 <h4><%= game.topic %></h4>
                 <h5><%= game.title %></h5>
@@ -209,7 +209,7 @@
                   <% end %>
                 </section>
 
-                <span>Play again</span>
+                <span>Show results</span>
               </a>
           </section>
         <% end %>
