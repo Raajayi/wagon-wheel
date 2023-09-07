@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   has_many :questions
+  has_many :responses, through: :questions
   has_many :answers, through: :questions
-  has_many :responses, through: :answers
   has_many :game_sessions
   has_many :users, through: :game_sessions
 
