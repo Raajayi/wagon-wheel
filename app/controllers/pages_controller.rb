@@ -22,7 +22,8 @@ class PagesController < ApplicationController
   end
 
   def results
-    @users = User.leaderboard_ranked
+    # @users = User.leaderboard_ranked
+      @games = Game.completed_games(current_user)
   end
 
   def statistics

@@ -21,7 +21,7 @@ export default class extends Controller {
 
   onShowLadderEnd() {
     // Set the timer value here
-    this.secondsValue = 5
+    this.secondsValue = 10
     const preSelectionInterval = setInterval(() => {
       this.secondsValue -= 1;
       this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
@@ -36,7 +36,9 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
+
     this.secondsValue = 20
+
     this.contentTarget.innerHTML = `<span class="count">${this.secondsValue}</span><span class="seconds">seconds</span>`;
 
     const preSelectionInterval = setInterval(() => {
@@ -62,11 +64,11 @@ export default class extends Controller {
     this.formTarget[5].disabled = true;
 
     this.secondsValue = 5;
-    this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+    // this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
 
     const postSelectionInterval = setInterval(() => {
       this.secondsValue -= 1;
-      this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
+     //  this.contentTarget.innerHTML = `Time remaining: ${this.secondsValue}`;
       if (this.secondsValue <= 0) {
         clearInterval(postSelectionInterval)
 

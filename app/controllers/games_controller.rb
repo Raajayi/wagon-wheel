@@ -39,7 +39,11 @@ class GamesController < ApplicationController
   end
 
   def score
+
     sleep(5)
+    
+    @user_first_name = current_user.first_name
+
     @game = Game.find(params[:id])
     @total_score = @game.total_score_for(current_user)
 

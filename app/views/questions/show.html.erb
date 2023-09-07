@@ -3,7 +3,7 @@
     <section class="wrapper">
 
       <section class="details">
-        <h3>Question <%= @question.order %> of <%= @question_count %></h3>
+        <h2>Question <%= @question.order %> of <%= @question_count %></h2>
         <p><strong><%= @game.topic %>: </strong><%= @game.title %></p>
 
       </section>
@@ -31,7 +31,15 @@
         <!-- Live table -->
         <section class="livetable show" data-countdown-target="livetable">
 
-          <h1>Live ladder</h1>
+          <h2>Live ladder</h2>
+          <div class="live">
+            <div class="pulse">
+              <div class="default"></div>
+              <div class="transition"></div>
+            </div>
+            <h6>Live</h6>
+          </div>
+          <br>
           <% @users.each_with_index do |user, index|%>
 
             <section class="player <%= user == current_user ? 'current'.html_safe : '' %>">
