@@ -5,6 +5,9 @@ class Game < ApplicationRecord
   has_many :game_sessions
   has_many :users, through: :game_sessions
 
+  def played_users
+    responses.map(&:user).uniq
+  end
 
   def total_score_for(user)
     responses.where(user: user).sum(:score)

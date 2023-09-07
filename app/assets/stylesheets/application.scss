@@ -15,7 +15,7 @@
 
 .navbar{display: none !important}
 
-body{font: 16px/32px "Poppins", sans-serif; letter-spacing: 0.5px; background: #f7f7f7; color: #1B1C1E}
+body{font: 16px/32px "Poppins", sans-serif; letter-spacing: 0.5px; background: #1B1C1E; color: #1B1C1E}
 img{max-width: 100%; height: auto}
 
 button{border: none}
@@ -24,7 +24,7 @@ button{border: none}
 .correct:before{background: #29BF12 !important; color: #fff; border: 2px solid #fff !important}
 
 h1{font:600 30px/38px "Poppins", sans-serif}
-h2{font:600 22px/34px "Poppins", sans-serif}
+h2{font:600 22px/34px "Poppins", sans-serif; margin-bottom: 0}
 h3{font:600 22px/34px "Poppins", sans-serif}
 h4{font:500 18px/30px "Poppins", sans-serif}
 h5{font:400 16px/28px "Poppins", sans-serif; min-height: 60px}
@@ -92,7 +92,7 @@ background-repeat: no-repeat}
 
 .title{margin: 0 0 30px}
 
-.content{position: relative}
+.content{position: relative; background: #f7f7f7}
 
 .games{display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 30px; padding-bottom: 30px}
 .games .icon{margin: 0 0 20px}
@@ -135,7 +135,7 @@ background-repeat: no-repeat}
 .registrations-template.create .menu, .passwords-template.create .menu, .sessions-template.create .menu{display: none}
 .registrations-template.create .main, .passwords-template.create .main, .sessions-template.create .main{grid-template-columns: 1fr}
 
-.sessions-template.new, .registrations-template.new, .passwords-template.new, .registrations-template.create, .passwords-template.create, .sessions-template.create{max-width: 450px; margin: 60px auto 0}
+.sessions-template.new, .registrations-template.new, .passwords-template.new, .registrations-template.create, .passwords-template.create, .sessions-template.create{max-width: 450px; margin: 0 auto; min-height: 100vh; background: #f7f7f7; padding: 60px 20px 0}
 .sessions-template .form-inputs, .registrations-template .form-inputs, .passwords-template .form-inputs{margin: 40px 0 0}
 .sessions-template label, .registrations-template label, .passwords-template label{font-size: 16px}
 .sessions-template .form-control, .registrations-template .form-control, .passwords-template .form-control{background: #fff; border: 0; padding: 18px; border-radius: 8px}
@@ -195,7 +195,7 @@ background-repeat: no-repeat}
 
 .resultstable .player:last-of-type{border-bottom-right-radius: 12px; border-bottom-left-radius: 12px}
 
-.resultstable .player:first-of-type{padding: 0; border-top-right-radius: 12px; border-top-left-radius: 12px}
+.resultstable .player:first-of-type{padding: 0; border-top-right-radius: 12px; border-top-left-radius: 12px; height: 90px}
 .resultstable .player:first-of-type .player-details{margin-left: -30px}
 .resultstable .player:first-of-type .player-points{margin-left: -15px}
 .resultstable .player:first-of-type .player-details h4{margin-left: 25px}
@@ -203,7 +203,9 @@ background-repeat: no-repeat}
 
 
 .resultstable .player:first-of-type .player-avatar .profile-head-default{display: none}
-.resultstable .player:first-of-type .player-avatar .profile-body-default{display: block; background: none !important; margin: -50px 0 0 -30px; max-width: 150px}
+.resultstable .player:first-of-type .player-avatar .profile-body-default{display: block; background: none !important; margin: -60px 0 0 -30px; max-width: 150px}
+
+.games-template .resultstable .player:first-of-type .player-avatar .profile-body-default{margin: -50px 0 0 -30px}
 
 // .resultstable .player.current{background: #1B1C1E; color: #fff; border-top: 2px solid #1b1c1e; border-bottom: 2px solid #1b1c1e}
 .resultstable .player.current{background: #1B1C1E; color: #fff}
@@ -229,8 +231,8 @@ background-repeat: no-repeat}
 .resultstable .player:nth-of-type(7) .player-score h3:after{content:'7th'}
 .resultstable .player:nth-of-type(8) .player-score h3:after{content:'8th'}
 
-.questions-template .livetable{padding: 60px 30px; background: #f7f7f7; position: absolute; top: -60px; left: 0; right: 0;  width: 100%; min-height: 100vh; opacity: 0; visibility: hidden; transition: 0.5s}
-.questions-template .livetable.show{opacity: 1; visibility: visible; transition: 0.5s}
+.questions-template .livetable{padding: 60px 30px; background: #f7f7f7; position: absolute; top: -60px; left: 0; right: 0;  width: 100%; opacity: 0; visibility: hidden; overflow: hidden; height:0; transition: 0.5s}
+.questions-template .livetable.show{opacity: 1; visibility: visible; transition: 0.5s; min-height: 100vh; overflow: scroll}
 
 
 // .questions-template .livetable{padding: 60px 30px; background: #f7f7f7}
@@ -254,7 +256,7 @@ background-repeat: no-repeat}
 
 
 .users{display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; text-align: center; max-width: 700px}
-.users .user{max-width: 120px; margin: 20px 0; opacity: 0.3; transition: 0.5s ease; position: relative}
+.users .user{max-width: 120px; margin: 20px 10px; opacity: 0.3; transition: 0.5s ease; position: relative}
 .users .user img{background: #D1E9FF; border-radius: 120px}
 .users .user .tick{position: absolute; right: 0; bottom: 30px; border: 2px solid #f7f7f7; opacity: 0; transition: 0.5s ease}
 .users .user.connected{opacity: 1; transition: 0.5s ease}
@@ -285,12 +287,21 @@ background-repeat: no-repeat}
 .countdown-content{text-align: center; padding: 40px 0}
 .countdown-content .count{font-size: 50px; font-weight: bold; margin: 0 0 10px; display: block}
 
-
-
 .live{position: absolute; top: 30px; right: 30px; color: #29BF12}
 .live .pulse{position: absolute; margin: 8px 0 0 -20px}
 .live .pulse .default{width: 10px; height: 10px; position: relative; background: #29BF12; border: 1px solid #f7f7f7; border-radius: 50%; z-index: 1; display: block}
 .live .pulse .transition{width: 20px; height: 20px; position: absolute; top: -5px; left: -5px; display: block; background: #29BF12; border-radius: 50%; opacity: 0; animation: pulse 2400ms ease-out infinite}
+
+.questions-template .live{top: 65px; right: 40px}
+
+.winner{opacity: 0; visibility: hidden; height: 0; background: #f7f7f7; position: absolute; height: 100vh; width: 100%; top: 0; left: 0; right: 0; bottom: 0; margin: auto; text-align: center; transition: 0.5s}
+.winner.show{opacity: 1; visibility: visible; height: 100%; transition: 0.5s}
+.winner .result{max-width: 400px; margin: 0 auto}
+.winner .won{font-size: 40px; display: block; line-height: 50px; margin: 0 auto 20px}
+.party{margin: 60px 0 20px}
+
+.winner.show .party{animation: zoomfade 1s ease}
+// .winner.show .result{animation: fade 1s ease}
 
 @keyframes pulse{
     0%{transform:scale(0.1); -ms-transform:scale(0.1); -webkit-transform:scale(0.1); opacity:0}
@@ -306,6 +317,10 @@ background-repeat: no-repeat}
   from{transform:rotate(0)}to{transform:rotate(360deg)}
 }
 
+@keyframes zoomfade{
+  from{transform:scale(0); opacity: 0}to{transform:scale(1); opacity: 1}
+}
+
 @keyframes spin{
   from{transform:rotate(0)}to{transform:rotate(1540deg)}
 }
@@ -316,8 +331,8 @@ background-repeat: no-repeat}
 
 @media(max-width: 1199px){
   .congratulations{display: none}
-  .wheel{max-height: auto; height: 100%}
-  .pin{max-width: 50px; margin: auto -20px; position: absolute; left: 0; right: 0; top: 0; bottom: 0}
+  .prizewheel .wheel{max-height: auto; height: 100%}
+  .prizewheel .pin{max-width: 50px; margin: auto -20px; position: absolute; left: 0; right: 0; top: 0; bottom: 0}
 
   .prizewheel .content button{position: relative; float: left; clear: both; bottom: 0; left: 0}
   .prize{height: auto; left: 0; width: 100%; right: 0; transform: rotate(90deg); position: relative; max-width: 400px; margin: 40px 0}
@@ -346,7 +361,7 @@ background-repeat: no-repeat}
 
 @media(max-width: 699px){
 
-  .questions .wrapper{padding: 0 20px}
+  .questions .wrapper{padding: 60px 0 0}
   .summary{padding: 80px 20px 20px; margin: 200px 0 50px}
 
   .logo-desktop{display: none}
@@ -369,15 +384,18 @@ background-repeat: no-repeat}
   .questions .question{margin: 20px 0}
   .questions .form-inputs input[type="radio"] + label{padding: 10px; min-height: 100px}
 
-  .landing .wheel{margin: 225px auto 0; animation: rotation 8s infinite linear}
-  .landing .pin{margin: 200px auto 0; max-width: 50px}
+  .landing .wheel{margin: 100px auto 0; animation: rotation 8s infinite linear}
+  .landing .pin{margin: 80px auto 0; max-width: 50px}
 
-  .pages-template .content, .registrations-template .content, .games-template .content{padding: 20px}
+  .pages-template .content, .registrations-template .content, .games-template .content{padding: 60px 20px 0; min-height: 100vh}
 
   .actions{position: relative; bottom: 0}
 
   .leadertable .player .player-avatar{max-width: 120px}
 
+  .users{grid-template-columns: 1fr 1fr 1fr}
+  .users .user{margin: 5px 10px}
+  .users .user span{font-size: 12px}
 
   .congratulations p{position: relative; text-align: center; font-size: 24px; line-height: 40px}
   .congratulations{display: block}

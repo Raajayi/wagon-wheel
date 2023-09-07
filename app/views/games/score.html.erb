@@ -1,7 +1,7 @@
 <h2>Final result</h2>
 <p>Great job <%= current_user.first_name %>. Your total score is <%= @total_score %></p>
 
-<section class="resultstable">
+<section class="resultstable" data-controller="score-timer">
 
   <% @users.each_with_index do |user, index|%>
 
@@ -34,4 +34,13 @@
     </section>
 
   <% end %>
+
+  <section class="winner" data-score-timer-target="resultstable">
+    <section class="result">
+      <%= image_tag "phillip-head-party.png", class: "party" %>
+      <span class="won">You won!</span>
+      <p>Well done <%= @user_first_name %>. You mastered <%= @game.topic %>, <%= @game.title %>. It's now time to collect your prize!</p>
+    </section>
+  </section>
+
 </section>
