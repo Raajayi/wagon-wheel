@@ -402,11 +402,12 @@ background-repeat: no-repeat}
   .landing .wheel{margin: 100px auto 0; animation: rotation 8s infinite linear}
   .landing .pin{margin: 80px auto 0; max-width: 50px}
 
-  .pages-template .content, .registrations-template .content, .games-template .content{padding: 60px 20px 0; min-height: 100vh}
+  .pages-template .content, .registrations-template .content, .games-template .content{padding: 20px 20px 0; min-height: 100vh}
 
   .actions{position: relative; bottom: 0}
 
-  .leadertable .player .player-avatar{max-width: 120px}
+  .leadertable .player{height: 100px}
+  .leadertable .player .player-avatar{max-width: 120px; position: relative; bottom: 0; left: -20px}
 
   .users{grid-template-columns: 1fr 1fr 1fr}
   .users .user{margin: 5px 10px}
@@ -427,6 +428,18 @@ background-repeat: no-repeat}
 
   .questions-template .livetable{padding: 60px 20px}
   .livetable .player{padding: 10px}
+
+  .resultstable .player .player-points{font-size: 12px}
+  .resultstable .player:first-of-type .player-points{font-size: 12px}
+  .resultstable .player .player-score h3, .resultstable .player .player-score .h3{margin: 0}
+
+  .resultstable .player:first-of-type .player-score h3, .resultstable .player:first-of-type .player-score .h3 {margin-right: 15px}
+
+  .resultstable .player .player-avatar .profile-head-default{margin: 0 10px 0 0}
+
+  .resultstable .player:first-of-type .player-details h4, .resultstable .player:first-of-type .player-details .h4{margin-left: 15px}
+
+  .completed{display: none}
 
 }
 

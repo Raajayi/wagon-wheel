@@ -32,7 +32,7 @@ export default class extends Controller {
 
   countdown() {
     // Set the timer value here
-    this.secondsValue = 5
+    this.secondsValue = 10
     const preSelectionInterval = setInterval(() => {
       this.secondsValue -= 1;
       if (this.secondsValue <= 0) {
